@@ -1,0 +1,105 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "SEVEN_SEG_SIGN[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SEVEN_SEG_SIGN[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SEVEN_SEG_SIGN[2]",
+					"strict" : false
+				},
+				{
+					"name" : "SEVEN_SEG_SIGN[3]",
+					"strict" : false
+				},
+				{
+					"name" : "SEVEN_SEG_TEN_GRAND[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SEVEN_SEG_TEN_GRAND[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SEVEN_SEG_TEN_GRAND[3]",
+					"strict" : false
+				},
+				{
+					"name" : "SEVEN_SEG_TEN_GRAND[5]",
+					"strict" : false
+				},
+				{
+					"name" : "SEVEN_SEG_TEN_GRAND[6]",
+					"strict" : false
+				},
+				{
+					"name" : "SEVEN_SEG_GRAND[2]",
+					"strict" : false
+				},
+				{
+					"name" : "SEVEN_SEG_GRAND[3]",
+					"strict" : false
+				},
+				{
+					"name" : "SEVEN_SEG_GRAND[6]",
+					"strict" : false
+				},
+				{
+					"name" : "SEVEN_SEG_HUNDREDS[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SEVEN_SEG_HUNDREDS[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SEVEN_SEG_HUNDREDS[5]",
+					"strict" : false
+				},
+				{
+					"name" : "SEVEN_SEG_TENS[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SEVEN_SEG_TENS[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SEVEN_SEG_TENS[2]",
+					"strict" : false
+				},
+				{
+					"name" : "SEVEN_SEG_TENS[6]",
+					"strict" : false
+				},
+				{
+					"name" : "SEVEN_SEG_UNITS[3]",
+					"strict" : false
+				},
+				{
+					"name" : "SEVEN_SEG_UNITS[6]",
+					"strict" : false
+				},
+				{
+					"name" : "CLK",
+					"strict" : false
+				},
+				{
+					"name" : "RST_N",
+					"strict" : false
+				},
+				{
+					"name" : "START",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

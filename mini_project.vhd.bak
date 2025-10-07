@@ -1,0 +1,21 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity mini_project is
+	generic (N :integer:= 10);
+	port (CLK: in std_logic;
+			RST_N: in std_logic;
+			START: in std_logic;
+			INPUT_A: in std_logic_vector(N-1 downto 0);
+			INPUT_B: in std_logic_vector(N-1 downto 0):
+			OP: in std_logic_vector(1 downto 0);
+			DONE: out std_logic;
+			SEVEN_SEG_SIGN: out std_logic_vector(6 downto 0);
+			SEVEN_SEG_SIGN: out std_logic_vector(6 downto 0);
+			SEVEN_SEG_SIGN: out std_logic_vector(6 downto 0);
+			SEVEN_SEG_SIGN: out std_logic_vector(6 downto 0);
+			SEVEN_SEG_SIGN: out std_logic_vector(6 downto 0);
+			SEVEN_SEG_SIGN: out std_logic_vector(6 downto 0)
+			);
+end mini_project;
