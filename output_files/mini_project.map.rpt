@@ -1,5 +1,5 @@
 Analysis & Synthesis report for mini_project
-Tue Oct 07 09:50:57 2025
+Tue Oct 07 11:16:28 2025
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -14,14 +14,23 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. State Machine - |mini_project|STATE
-  9. Registers Removed During Synthesis
- 10. General Register Statistics
- 11. Inverted Register Statistics
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Parameter Settings for User Entity Instance: Top-level Entity: |mini_project
- 14. Post-Synthesis Netlist Statistics for Top Partition
- 15. Elapsed Time Per Partition
- 16. Analysis & Synthesis Messages
+  9. Logic Cells Representing Combinational Loops
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |mini_project
+ 13. Parameter Settings for User Entity Instance: bcd_converter:CA
+ 14. Parameter Settings for Inferred Entity Instance: bcd_converter:CA|lpm_divide:Div0
+ 15. Parameter Settings for Inferred Entity Instance: bcd_converter:CA|lpm_divide:Div1
+ 16. Parameter Settings for Inferred Entity Instance: bcd_converter:CA|lpm_divide:Mod0
+ 17. Parameter Settings for Inferred Entity Instance: bcd_converter:CA|lpm_divide:Div2
+ 18. Parameter Settings for Inferred Entity Instance: bcd_converter:CA|lpm_divide:Mod1
+ 19. Parameter Settings for Inferred Entity Instance: bcd_converter:CA|lpm_divide:Div3
+ 20. Parameter Settings for Inferred Entity Instance: bcd_converter:CA|lpm_divide:Mod2
+ 21. Parameter Settings for Inferred Entity Instance: bcd_converter:CA|lpm_divide:Mod3
+ 22. Port Connectivity Checks: "bcd_converter:CA"
+ 23. Post-Synthesis Netlist Statistics for Top Partition
+ 24. Elapsed Time Per Partition
+ 25. Analysis & Synthesis Messages
 
 
 
@@ -48,15 +57,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Oct 07 09:50:57 2025       ;
+; Analysis & Synthesis Status        ; Successful - Tue Oct 07 11:16:28 2025       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; mini_project                                ;
 ; Top-level Entity Name              ; mini_project                                ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 22                                          ;
-;     Total combinational functions  ; 1                                           ;
-;     Dedicated logic registers      ; 22                                          ;
-; Total registers                    ; 22                                          ;
+; Total logic elements               ; 9,143                                       ;
+;     Total combinational functions  ; 9,133                                       ;
+;     Dedicated logic registers      ; 48                                          ;
+; Total registers                    ; 48                                          ;
 ; Total pins                         ; 68                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -166,58 +175,130 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
+;     Processor 2            ;   0.2%      ;
+;     Processor 3            ;   0.1%      ;
+;     Processor 4            ;   0.1%      ;
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                               ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                        ; Library ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------+---------+
-; mini_project.vhd                 ; yes             ; User VHDL File  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd ;         ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                   ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                               ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+; mini_project.vhd                 ; yes             ; User VHDL File               ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd        ;         ;
+; bcd_converter.vhd                ; yes             ; User VHDL File               ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd       ;         ;
+; bcd_7_segment.vhd                ; yes             ; User VHDL File               ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_7_segment.vhd       ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
+; aglobal201.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc      ;         ;
+; db/lpm_divide_0do.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_divide_0do.tdf   ;         ;
+; db/abs_divider_5dg.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/abs_divider_5dg.tdf  ;         ;
+; db/alt_u_div_uke.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/alt_u_div_uke.tdf    ;         ;
+; db/add_sub_t3c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/add_sub_t3c.tdf      ;         ;
+; db/add_sub_u3c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/add_sub_u3c.tdf      ;         ;
+; db/lpm_abs_9b9.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_abs_9b9.tdf      ;         ;
+; db/lpm_abs_8b9.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_abs_8b9.tdf      ;         ;
+; db/lpm_divide_sco.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_divide_sco.tdf   ;         ;
+; db/abs_divider_1dg.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/abs_divider_1dg.tdf  ;         ;
+; db/alt_u_div_mke.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/alt_u_div_mke.tdf    ;         ;
+; db/lpm_abs_5b9.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_abs_5b9.tdf      ;         ;
+; db/lpm_divide_25o.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_divide_25o.tdf   ;         ;
+; db/abs_divider_4dg.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/abs_divider_4dg.tdf  ;         ;
+; db/alt_u_div_ske.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/alt_u_div_ske.tdf    ;         ;
+; db/lpm_divide_ibo.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_divide_ibo.tdf   ;         ;
+; db/abs_divider_nbg.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/abs_divider_nbg.tdf  ;         ;
+; db/alt_u_div_2ie.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/alt_u_div_2ie.tdf    ;         ;
+; db/lpm_abs_r99.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_abs_r99.tdf      ;         ;
+; db/lpm_divide_fbo.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_divide_fbo.tdf   ;         ;
+; db/abs_divider_kbg.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/abs_divider_kbg.tdf  ;         ;
+; db/alt_u_div_she.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/alt_u_div_she.tdf    ;         ;
+; db/lpm_abs_o99.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_abs_o99.tdf      ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary            ;
-+---------------------------------------------+----------+
-; Resource                                    ; Usage    ;
-+---------------------------------------------+----------+
-; Estimated Total logic elements              ; 22       ;
-;                                             ;          ;
-; Total combinational functions               ; 1        ;
-; Logic element usage by number of LUT inputs ;          ;
-;     -- 4 input functions                    ; 0        ;
-;     -- 3 input functions                    ; 0        ;
-;     -- <=2 input functions                  ; 1        ;
-;                                             ;          ;
-; Logic elements by mode                      ;          ;
-;     -- normal mode                          ; 1        ;
-;     -- arithmetic mode                      ; 0        ;
-;                                             ;          ;
-; Total registers                             ; 22       ;
-;     -- Dedicated logic registers            ; 22       ;
-;     -- I/O registers                        ; 0        ;
-;                                             ;          ;
-; I/O pins                                    ; 68       ;
-;                                             ;          ;
-; Embedded Multiplier 9-bit elements          ; 0        ;
-;                                             ;          ;
-; Maximum fan-out node                        ; STATE.S0 ;
-; Maximum fan-out                             ; 22       ;
-; Total fan-out                               ; 157      ;
-; Average fan-out                             ; 0.99     ;
-+---------------------------------------------+----------+
++-----------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                           ;
++---------------------------------------------+-------------------------+
+; Resource                                    ; Usage                   ;
++---------------------------------------------+-------------------------+
+; Estimated Total logic elements              ; 9,143                   ;
+;                                             ;                         ;
+; Total combinational functions               ; 9133                    ;
+; Logic element usage by number of LUT inputs ;                         ;
+;     -- 4 input functions                    ; 2696                    ;
+;     -- 3 input functions                    ; 2913                    ;
+;     -- <=2 input functions                  ; 3524                    ;
+;                                             ;                         ;
+; Logic elements by mode                      ;                         ;
+;     -- normal mode                          ; 6236                    ;
+;     -- arithmetic mode                      ; 2897                    ;
+;                                             ;                         ;
+; Total registers                             ; 48                      ;
+;     -- Dedicated logic registers            ; 48                      ;
+;     -- I/O registers                        ; 0                       ;
+;                                             ;                         ;
+; I/O pins                                    ; 68                      ;
+;                                             ;                         ;
+; Embedded Multiplier 9-bit elements          ; 0                       ;
+;                                             ;                         ;
+; Maximum fan-out node                        ; bcd_converter:CA|INT~32 ;
+; Maximum fan-out                             ; 250                     ;
+; Total fan-out                               ; 26361                   ;
+; Average fan-out                             ; 2.83                    ;
++---------------------------------------------+-------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                 ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+--------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name  ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+--------------+--------------+
-; |mini_project              ; 1 (1)               ; 22 (22)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 68   ; 0            ; 0          ; |mini_project       ; mini_project ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+--------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                          ;
++------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node               ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                         ; Entity Name     ; Library Name ;
++------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; |mini_project                            ; 9133 (38)           ; 48 (12)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 68   ; 0            ; 0          ; |mini_project                                                                                                               ; mini_project    ; work         ;
+;    |bcd_7_segment:DISP|                  ; 36 (36)             ; 36 (36)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_7_segment:DISP                                                                                            ; bcd_7_segment   ; work         ;
+;    |bcd_converter:CA|                    ; 9059 (236)          ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CA                                                                                              ; bcd_converter   ; work         ;
+;       |lpm_divide:Div0|                  ; 835 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CA|lpm_divide:Div0                                                                              ; lpm_divide      ; work         ;
+;          |lpm_divide_0do:auto_generated| ; 835 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CA|lpm_divide:Div0|lpm_divide_0do:auto_generated                                                ; lpm_divide_0do  ; work         ;
+;             |abs_divider_5dg:divider|    ; 835 (8)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CA|lpm_divide:Div0|lpm_divide_0do:auto_generated|abs_divider_5dg:divider                        ; abs_divider_5dg ; work         ;
+;                |alt_u_div_uke:divider|   ; 818 (818)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CA|lpm_divide:Div0|lpm_divide_0do:auto_generated|abs_divider_5dg:divider|alt_u_div_uke:divider  ; alt_u_div_uke   ; work         ;
+;                |lpm_abs_8b9:my_abs_num|  ; 9 (9)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CA|lpm_divide:Div0|lpm_divide_0do:auto_generated|abs_divider_5dg:divider|lpm_abs_8b9:my_abs_num ; lpm_abs_8b9     ; work         ;
+;       |lpm_divide:Div1|                  ; 832 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CA|lpm_divide:Div1                                                                              ; lpm_divide      ; work         ;
+;          |lpm_divide_sco:auto_generated| ; 832 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CA|lpm_divide:Div1|lpm_divide_sco:auto_generated                                                ; lpm_divide_sco  ; work         ;
+;             |abs_divider_1dg:divider|    ; 832 (52)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CA|lpm_divide:Div1|lpm_divide_sco:auto_generated|abs_divider_1dg:divider                        ; abs_divider_1dg ; work         ;
+;                |alt_u_div_mke:divider|   ; 744 (744)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CA|lpm_divide:Div1|lpm_divide_sco:auto_generated|abs_divider_1dg:divider|alt_u_div_mke:divider  ; alt_u_div_mke   ; work         ;
+;                |lpm_abs_8b9:my_abs_num|  ; 36 (36)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CA|lpm_divide:Div1|lpm_divide_sco:auto_generated|abs_divider_1dg:divider|lpm_abs_8b9:my_abs_num ; lpm_abs_8b9     ; work         ;
+;       |lpm_divide:Div2|                  ; 687 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CA|lpm_divide:Div2                                                                              ; lpm_divide      ; work         ;
+;          |lpm_divide_ibo:auto_generated| ; 687 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CA|lpm_divide:Div2|lpm_divide_ibo:auto_generated                                                ; lpm_divide_ibo  ; work         ;
+;             |abs_divider_nbg:divider|    ; 687 (58)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CA|lpm_divide:Div2|lpm_divide_ibo:auto_generated|abs_divider_nbg:divider                        ; abs_divider_nbg ; work         ;
+;                |alt_u_div_2ie:divider|   ; 625 (625)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CA|lpm_divide:Div2|lpm_divide_ibo:auto_generated|abs_divider_nbg:divider|alt_u_div_2ie:divider  ; alt_u_div_2ie   ; work         ;
+;                |lpm_abs_8b9:my_abs_num|  ; 4 (4)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CA|lpm_divide:Div2|lpm_divide_ibo:auto_generated|abs_divider_nbg:divider|lpm_abs_8b9:my_abs_num ; lpm_abs_8b9     ; work         ;
+;       |lpm_divide:Div3|                  ; 516 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CA|lpm_divide:Div3                                                                              ; lpm_divide      ; work         ;
+;          |lpm_divide_fbo:auto_generated| ; 516 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CA|lpm_divide:Div3|lpm_divide_fbo:auto_generated                                                ; lpm_divide_fbo  ; work         ;
+;             |abs_divider_kbg:divider|    ; 516 (62)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CA|lpm_divide:Div3|lpm_divide_fbo:auto_generated|abs_divider_kbg:divider                        ; abs_divider_kbg ; work         ;
+;                |alt_u_div_she:divider|   ; 449 (449)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CA|lpm_divide:Div3|lpm_divide_fbo:auto_generated|abs_divider_kbg:divider|alt_u_div_she:divider  ; alt_u_div_she   ; work         ;
+;                |lpm_abs_8b9:my_abs_num|  ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CA|lpm_divide:Div3|lpm_divide_fbo:auto_generated|abs_divider_kbg:divider|lpm_abs_8b9:my_abs_num ; lpm_abs_8b9     ; work         ;
+;       |lpm_divide:Mod0|                  ; 1389 (0)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CA|lpm_divide:Mod0                                                                              ; lpm_divide      ; work         ;
+;          |lpm_divide_25o:auto_generated| ; 1389 (0)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CA|lpm_divide:Mod0|lpm_divide_25o:auto_generated                                                ; lpm_divide_25o  ; work         ;
+;             |abs_divider_4dg:divider|    ; 1389 (8)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CA|lpm_divide:Mod0|lpm_divide_25o:auto_generated|abs_divider_4dg:divider                        ; abs_divider_4dg ; work         ;
+;                |alt_u_div_ske:divider|   ; 1357 (1357)         ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CA|lpm_divide:Mod0|lpm_divide_25o:auto_generated|abs_divider_4dg:divider|alt_u_div_ske:divider  ; alt_u_div_ske   ; work         ;
+;                |lpm_abs_8b9:my_abs_num|  ; 24 (24)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CA|lpm_divide:Mod0|lpm_divide_25o:auto_generated|abs_divider_4dg:divider|lpm_abs_8b9:my_abs_num ; lpm_abs_8b9     ; work         ;
+;       |lpm_divide:Mod1|                  ; 1480 (0)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CA|lpm_divide:Mod1                                                                              ; lpm_divide      ; work         ;
+;          |lpm_divide_25o:auto_generated| ; 1480 (0)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CA|lpm_divide:Mod1|lpm_divide_25o:auto_generated                                                ; lpm_divide_25o  ; work         ;
+;             |abs_divider_4dg:divider|    ; 1480 (9)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CA|lpm_divide:Mod1|lpm_divide_25o:auto_generated|abs_divider_4dg:divider                        ; abs_divider_4dg ; work         ;
+;                |alt_u_div_ske:divider|   ; 1441 (1441)         ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CA|lpm_divide:Mod1|lpm_divide_25o:auto_generated|abs_divider_4dg:divider|alt_u_div_ske:divider  ; alt_u_div_ske   ; work         ;
+;                |lpm_abs_8b9:my_abs_num|  ; 30 (30)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CA|lpm_divide:Mod1|lpm_divide_25o:auto_generated|abs_divider_4dg:divider|lpm_abs_8b9:my_abs_num ; lpm_abs_8b9     ; work         ;
+;       |lpm_divide:Mod2|                  ; 1562 (0)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CA|lpm_divide:Mod2                                                                              ; lpm_divide      ; work         ;
+;          |lpm_divide_25o:auto_generated| ; 1562 (0)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CA|lpm_divide:Mod2|lpm_divide_25o:auto_generated                                                ; lpm_divide_25o  ; work         ;
+;             |abs_divider_4dg:divider|    ; 1562 (9)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CA|lpm_divide:Mod2|lpm_divide_25o:auto_generated|abs_divider_4dg:divider                        ; abs_divider_4dg ; work         ;
+;                |alt_u_div_ske:divider|   ; 1497 (1497)         ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CA|lpm_divide:Mod2|lpm_divide_25o:auto_generated|abs_divider_4dg:divider|alt_u_div_ske:divider  ; alt_u_div_ske   ; work         ;
+;                |lpm_abs_8b9:my_abs_num|  ; 56 (56)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CA|lpm_divide:Mod2|lpm_divide_25o:auto_generated|abs_divider_4dg:divider|lpm_abs_8b9:my_abs_num ; lpm_abs_8b9     ; work         ;
+;       |lpm_divide:Mod3|                  ; 1522 (0)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CA|lpm_divide:Mod3                                                                              ; lpm_divide      ; work         ;
+;          |lpm_divide_25o:auto_generated| ; 1522 (0)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CA|lpm_divide:Mod3|lpm_divide_25o:auto_generated                                                ; lpm_divide_25o  ; work         ;
+;             |abs_divider_4dg:divider|    ; 1522 (8)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CA|lpm_divide:Mod3|lpm_divide_25o:auto_generated|abs_divider_4dg:divider                        ; abs_divider_4dg ; work         ;
+;                |alt_u_div_ske:divider|   ; 1510 (1510)         ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CA|lpm_divide:Mod3|lpm_divide_25o:auto_generated|abs_divider_4dg:divider|alt_u_div_ske:divider  ; alt_u_div_ske   ; work         ;
+;                |lpm_abs_8b9:my_abs_num|  ; 4 (4)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CA|lpm_divide:Mod3|lpm_divide_25o:auto_generated|abs_divider_4dg:divider|lpm_abs_8b9:my_abs_num ; lpm_abs_8b9     ; work         ;
++------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -237,40 +318,63 @@ Encoding Type:  One-Hot
 +----------+----------+----------+----------+----------+----------+----------+----------+
 
 
-+---------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                              ;
-+----------------------------------------+----------------------------------------+
-; Register name                          ; Reason for Removal                     ;
-+----------------------------------------+----------------------------------------+
-; SEVEN_SEG_UNITS[0]~reg0                ; Stuck at GND due to stuck port data_in ;
-; SEVEN_SEG_SIGN[6]~reg0                 ; Stuck at VCC due to stuck port data_in ;
-; SEVEN_SEG_SIGN[5]~reg0                 ; Stuck at GND due to stuck port data_in ;
-; SEVEN_SEG_SIGN[4]~reg0                 ; Stuck at GND due to stuck port data_in ;
-; SEVEN_SEG_TEN_GRAND[4]~reg0            ; Stuck at GND due to stuck port data_in ;
-; SEVEN_SEG_TEN_GRAND[2]~reg0            ; Stuck at GND due to stuck port data_in ;
-; SEVEN_SEG_GRAND[5]~reg0                ; Stuck at GND due to stuck port data_in ;
-; SEVEN_SEG_GRAND[4]~reg0                ; Stuck at GND due to stuck port data_in ;
-; SEVEN_SEG_GRAND[1]~reg0                ; Stuck at GND due to stuck port data_in ;
-; SEVEN_SEG_GRAND[0]~reg0                ; Stuck at GND due to stuck port data_in ;
-; SEVEN_SEG_HUNDREDS[6]~reg0             ; Stuck at VCC due to stuck port data_in ;
-; SEVEN_SEG_HUNDREDS[4]~reg0             ; Stuck at GND due to stuck port data_in ;
-; SEVEN_SEG_HUNDREDS[3]~reg0             ; Stuck at GND due to stuck port data_in ;
-; SEVEN_SEG_HUNDREDS[2]~reg0             ; Stuck at GND due to stuck port data_in ;
-; SEVEN_SEG_TENS[5]~reg0                 ; Stuck at GND due to stuck port data_in ;
-; SEVEN_SEG_TENS[4]~reg0                 ; Stuck at GND due to stuck port data_in ;
-; SEVEN_SEG_TENS[3]~reg0                 ; Stuck at GND due to stuck port data_in ;
-; SEVEN_SEG_UNITS[5]~reg0                ; Stuck at GND due to stuck port data_in ;
-; SEVEN_SEG_UNITS[4]~reg0                ; Stuck at GND due to stuck port data_in ;
-; SEVEN_SEG_UNITS[2]~reg0                ; Stuck at GND due to stuck port data_in ;
-; SEVEN_SEG_UNITS[1]~reg0                ; Stuck at GND due to stuck port data_in ;
-; STATE.S1                               ; Lost fanout                            ;
-; STATE.S2                               ; Lost fanout                            ;
-; STATE.S3                               ; Lost fanout                            ;
-; STATE.S4                               ; Lost fanout                            ;
-; STATE.S5                               ; Lost fanout                            ;
-; STATE.S6                               ; Lost fanout                            ;
-; Total Number of Removed Registers = 27 ;                                        ;
-+----------------------------------------+----------------------------------------+
++-------------------------------------------------------------+
+; Logic Cells Representing Combinational Loops                ;
++--------------------------------------------------------+----+
+; Logic Cell Name                                        ;    ;
++--------------------------------------------------------+----+
+; rtl~1                                                  ;    ;
+; bcd_converter:CA|INT~0                                 ;    ;
+; rtl~31                                                 ;    ;
+; rtl~30                                                 ;    ;
+; rtl~29                                                 ;    ;
+; rtl~28                                                 ;    ;
+; rtl~27                                                 ;    ;
+; rtl~26                                                 ;    ;
+; rtl~25                                                 ;    ;
+; rtl~24                                                 ;    ;
+; rtl~23                                                 ;    ;
+; rtl~22                                                 ;    ;
+; rtl~21                                                 ;    ;
+; rtl~20                                                 ;    ;
+; rtl~19                                                 ;    ;
+; rtl~18                                                 ;    ;
+; rtl~17                                                 ;    ;
+; rtl~16                                                 ;    ;
+; rtl~15                                                 ;    ;
+; rtl~14                                                 ;    ;
+; rtl~13                                                 ;    ;
+; rtl~12                                                 ;    ;
+; rtl~11                                                 ;    ;
+; rtl~10                                                 ;    ;
+; rtl~9                                                  ;    ;
+; rtl~8                                                  ;    ;
+; rtl~7                                                  ;    ;
+; rtl~6                                                  ;    ;
+; rtl~5                                                  ;    ;
+; rtl~4                                                  ;    ;
+; rtl~3                                                  ;    ;
+; rtl~2                                                  ;    ;
+; rtl~0                                                  ;    ;
+; Number of logic cells representing combinational loops ; 33 ;
++--------------------------------------------------------+----+
+Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                               ;
++-----------------------------------------+----------------------------------------+
+; Register name                           ; Reason for Removal                     ;
++-----------------------------------------+----------------------------------------+
+; DATA_A[9,11..19]                        ; Merged with DATA_A[10]                 ;
+; bcd_7_segment:DISP|SEVEN_SEG_SIGN[0..5] ; Stuck at VCC due to stuck port data_in ;
+; STATE.S2                                ; Lost fanout                            ;
+; STATE.S3                                ; Lost fanout                            ;
+; STATE.S4                                ; Lost fanout                            ;
+; STATE.S5                                ; Lost fanout                            ;
+; STATE.S6                                ; Lost fanout                            ;
+; Total Number of Removed Registers = 21  ;                                        ;
++-----------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -278,36 +382,14 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 22    ;
+; Total registers                              ; 48    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 22    ;
+; Number of registers using Asynchronous Clear ; 12    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 21    ;
+; Number of registers using Clock Enable       ; 10    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
-
-
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; SEVEN_SEG_TEN_GRAND[6]~reg0            ; 1       ;
-; SEVEN_SEG_GRAND[6]~reg0                ; 1       ;
-; SEVEN_SEG_TENS[6]~reg0                 ; 1       ;
-; SEVEN_SEG_UNITS[6]~reg0                ; 1       ;
-; Total number of inverted registers = 4 ;         ;
-+----------------------------------------+---------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |mini_project|STATE        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
 +------------------------------------------------------------------------------+
@@ -320,23 +402,233 @@ Encoding Type:  One-Hot
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: bcd_converter:CA ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; n              ; 10    ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: bcd_converter:CA|lpm_divide:Div0 ;
++------------------------+----------------+-----------------------------------------+
+; Parameter Name         ; Value          ; Type                                    ;
++------------------------+----------------+-----------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                 ;
+; LPM_WIDTHD             ; 15             ; Untyped                                 ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                 ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                 ;
+; LPM_PIPELINE           ; 0              ; Untyped                                 ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                 ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                 ;
+; CBXI_PARAMETER         ; lpm_divide_0do ; Untyped                                 ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                 ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                 ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                              ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                            ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                            ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                          ;
++------------------------+----------------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: bcd_converter:CA|lpm_divide:Div1 ;
++------------------------+----------------+-----------------------------------------+
+; Parameter Name         ; Value          ; Type                                    ;
++------------------------+----------------+-----------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                 ;
+; LPM_WIDTHD             ; 11             ; Untyped                                 ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                 ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                 ;
+; LPM_PIPELINE           ; 0              ; Untyped                                 ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                 ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                 ;
+; CBXI_PARAMETER         ; lpm_divide_sco ; Untyped                                 ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                 ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                 ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                              ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                            ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                            ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                          ;
++------------------------+----------------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: bcd_converter:CA|lpm_divide:Mod0 ;
++------------------------+----------------+-----------------------------------------+
+; Parameter Name         ; Value          ; Type                                    ;
++------------------------+----------------+-----------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                 ;
+; LPM_WIDTHD             ; 32             ; Untyped                                 ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                 ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                 ;
+; LPM_PIPELINE           ; 0              ; Untyped                                 ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                 ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                 ;
+; CBXI_PARAMETER         ; lpm_divide_25o ; Untyped                                 ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                 ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                 ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                              ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                            ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                            ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                          ;
++------------------------+----------------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: bcd_converter:CA|lpm_divide:Div2 ;
++------------------------+----------------+-----------------------------------------+
+; Parameter Name         ; Value          ; Type                                    ;
++------------------------+----------------+-----------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                 ;
+; LPM_WIDTHD             ; 8              ; Untyped                                 ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                 ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                 ;
+; LPM_PIPELINE           ; 0              ; Untyped                                 ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                 ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                 ;
+; CBXI_PARAMETER         ; lpm_divide_ibo ; Untyped                                 ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                 ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                 ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                              ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                            ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                            ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                          ;
++------------------------+----------------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: bcd_converter:CA|lpm_divide:Mod1 ;
++------------------------+----------------+-----------------------------------------+
+; Parameter Name         ; Value          ; Type                                    ;
++------------------------+----------------+-----------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                 ;
+; LPM_WIDTHD             ; 32             ; Untyped                                 ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                 ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                 ;
+; LPM_PIPELINE           ; 0              ; Untyped                                 ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                 ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                 ;
+; CBXI_PARAMETER         ; lpm_divide_25o ; Untyped                                 ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                 ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                 ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                              ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                            ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                            ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                          ;
++------------------------+----------------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: bcd_converter:CA|lpm_divide:Div3 ;
++------------------------+----------------+-----------------------------------------+
+; Parameter Name         ; Value          ; Type                                    ;
++------------------------+----------------+-----------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                 ;
+; LPM_WIDTHD             ; 5              ; Untyped                                 ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                 ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                 ;
+; LPM_PIPELINE           ; 0              ; Untyped                                 ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                 ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                 ;
+; CBXI_PARAMETER         ; lpm_divide_fbo ; Untyped                                 ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                 ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                 ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                              ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                            ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                            ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                          ;
++------------------------+----------------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: bcd_converter:CA|lpm_divide:Mod2 ;
++------------------------+----------------+-----------------------------------------+
+; Parameter Name         ; Value          ; Type                                    ;
++------------------------+----------------+-----------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                 ;
+; LPM_WIDTHD             ; 32             ; Untyped                                 ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                 ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                 ;
+; LPM_PIPELINE           ; 0              ; Untyped                                 ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                 ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                 ;
+; CBXI_PARAMETER         ; lpm_divide_25o ; Untyped                                 ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                 ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                 ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                              ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                            ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                            ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                          ;
++------------------------+----------------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: bcd_converter:CA|lpm_divide:Mod3 ;
++------------------------+----------------+-----------------------------------------+
+; Parameter Name         ; Value          ; Type                                    ;
++------------------------+----------------+-----------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                 ;
+; LPM_WIDTHD             ; 32             ; Untyped                                 ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                 ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                 ;
+; LPM_PIPELINE           ; 0              ; Untyped                                 ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                 ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                 ;
+; CBXI_PARAMETER         ; lpm_divide_25o ; Untyped                                 ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                 ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                 ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                              ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                            ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                            ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                          ;
++------------------------+----------------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------+
+; Port Connectivity Checks: "bcd_converter:CA" ;
++----------+-------+----------+----------------+
+; Port     ; Type  ; Severity ; Details        ;
++----------+-------+----------+----------------+
+; overflow ; Input ; Info     ; Stuck at GND   ;
++----------+-------+----------+----------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 68                          ;
-; cycloneiii_ff         ; 22                          ;
-;     CLR               ; 1                           ;
-;     ENA CLR           ; 21                          ;
-; cycloneiii_lcell_comb ; 7                           ;
-;     normal            ; 7                           ;
-;         0 data inputs ; 2                           ;
-;         1 data inputs ; 4                           ;
-;         2 data inputs ; 1                           ;
+; cycloneiii_ff         ; 48                          ;
+;     CLR               ; 2                           ;
+;     ENA CLR           ; 10                          ;
+;     plain             ; 36                          ;
+; cycloneiii_lcell_comb ; 9135                        ;
+;     arith             ; 2897                        ;
+;         1 data inputs ; 15                          ;
+;         2 data inputs ; 159                         ;
+;         3 data inputs ; 2723                        ;
+;     normal            ; 6238                        ;
+;         0 data inputs ; 210                         ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 3139                        ;
+;         3 data inputs ; 190                         ;
+;         4 data inputs ; 2696                        ;
 ;                       ;                             ;
-; Max LUT depth         ; 1.00                        ;
-; Average LUT depth     ; 0.34                        ;
+; Max LUT depth         ; 208.40                      ;
+; Average LUT depth     ; 168.91                      ;
 +-----------------------+-----------------------------+
 
 
@@ -345,7 +637,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:08     ;
 +----------------+--------------+
 
 
@@ -355,61 +647,251 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Tue Oct 07 09:50:45 2025
+    Info: Processing started: Tue Oct 07 11:16:08 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off mini_project -c mini_project
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file mini_project.vhd
-    Info (12022): Found design unit 1: mini_project-Behavioral File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 23
+    Info (12022): Found design unit 1: mini_project-structural File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 23
     Info (12023): Found entity 1: mini_project File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file bcd_converter.vhd
+    Info (12022): Found design unit 1: bcd_converter-converter File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 18
+    Info (12023): Found entity 1: bcd_converter File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file bcd_7_segment.vhd
+    Info (12022): Found design unit 1: bcd_7_segment-rtl File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_7_segment.vhd Line: 22
+    Info (12023): Found entity 1: bcd_7_segment File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_7_segment.vhd Line: 4
 Info (12127): Elaborating entity "mini_project" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at mini_project.vhd(25): object "RESET" assigned a value but never read File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 25
-Warning (10036): Verilog HDL or VHDL warning at mini_project.vhd(26): object "SIGN" assigned a value but never read File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 26
-Warning (10036): Verilog HDL or VHDL warning at mini_project.vhd(27): object "DATA_A" assigned a value but never read File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 27
-Warning (10036): Verilog HDL or VHDL warning at mini_project.vhd(28): object "DATA_B" assigned a value but never read File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 28
-Warning (10036): Verilog HDL or VHDL warning at mini_project.vhd(30): object "OPERATOR" assigned a value but never read File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 30
-Warning (10631): VHDL Process Statement warning at mini_project.vhd(33): inferring latch(es) for signal or variable "DONE", which holds its previous value in one or more paths through the process File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 33
-Info (10041): Inferred latch for "DONE" at mini_project.vhd(33) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 33
-Info (13000): Registers with preset signals will power-up high File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 35
-Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (10036): Verilog HDL or VHDL warning at mini_project.vhd(55): object "RESET" assigned a value but never read File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 55
+Warning (10036): Verilog HDL or VHDL warning at mini_project.vhd(56): object "SIGN" assigned a value but never read File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 56
+Warning (10036): Verilog HDL or VHDL warning at mini_project.vhd(59): object "DATA_B" assigned a value but never read File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 59
+Warning (10036): Verilog HDL or VHDL warning at mini_project.vhd(61): object "OPERATOR" assigned a value but never read File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 61
+Warning (10631): VHDL Process Statement warning at mini_project.vhd(110): inferring latch(es) for signal or variable "DONE", which holds its previous value in one or more paths through the process File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 110
+Info (10041): Inferred latch for "DONE" at mini_project.vhd(110) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 110
+Info (12128): Elaborating entity "bcd_converter" for hierarchy "bcd_converter:CA" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 76
+Warning (10492): VHDL Process Statement warning at bcd_converter.vhd(33): signal "INT" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 33
+Warning (10492): VHDL Process Statement warning at bcd_converter.vhd(35): signal "INT" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 35
+Warning (10492): VHDL Process Statement warning at bcd_converter.vhd(41): signal "INT" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 41
+Warning (10492): VHDL Process Statement warning at bcd_converter.vhd(42): signal "INT" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 42
+Warning (10492): VHDL Process Statement warning at bcd_converter.vhd(43): signal "INT" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 43
+Warning (10492): VHDL Process Statement warning at bcd_converter.vhd(44): signal "INT" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 44
+Warning (10492): VHDL Process Statement warning at bcd_converter.vhd(45): signal "INT" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 45
+Warning (10492): VHDL Process Statement warning at bcd_converter.vhd(47): signal "TEN_GRAND" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 47
+Warning (10492): VHDL Process Statement warning at bcd_converter.vhd(48): signal "GRAND" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 48
+Warning (10492): VHDL Process Statement warning at bcd_converter.vhd(49): signal "HUNDREDS" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 49
+Warning (10492): VHDL Process Statement warning at bcd_converter.vhd(50): signal "TENS" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 50
+Warning (10492): VHDL Process Statement warning at bcd_converter.vhd(51): signal "ONES" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 51
+Warning (10631): VHDL Process Statement warning at bcd_converter.vhd(22): inferring latch(es) for signal or variable "INT", which holds its previous value in one or more paths through the process File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (10631): VHDL Process Statement warning at bcd_converter.vhd(22): inferring latch(es) for signal or variable "TEN_GRAND", which holds its previous value in one or more paths through the process File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (10631): VHDL Process Statement warning at bcd_converter.vhd(22): inferring latch(es) for signal or variable "GRAND", which holds its previous value in one or more paths through the process File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (10631): VHDL Process Statement warning at bcd_converter.vhd(22): inferring latch(es) for signal or variable "HUNDREDS", which holds its previous value in one or more paths through the process File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (10631): VHDL Process Statement warning at bcd_converter.vhd(22): inferring latch(es) for signal or variable "TENS", which holds its previous value in one or more paths through the process File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (10631): VHDL Process Statement warning at bcd_converter.vhd(22): inferring latch(es) for signal or variable "ONES", which holds its previous value in one or more paths through the process File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "ONES[0]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "ONES[1]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "ONES[2]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "ONES[3]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "TENS[0]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "TENS[1]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "TENS[2]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "TENS[3]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "HUNDREDS[0]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "HUNDREDS[1]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "HUNDREDS[2]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "HUNDREDS[3]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "GRAND[0]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "GRAND[1]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "GRAND[2]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "GRAND[3]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "TEN_GRAND[0]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "TEN_GRAND[1]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "TEN_GRAND[2]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "TEN_GRAND[3]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "INT[0]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "INT[1]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "INT[2]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "INT[3]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "INT[4]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "INT[5]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "INT[6]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "INT[7]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "INT[8]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "INT[9]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "INT[10]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "INT[11]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "INT[12]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "INT[13]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "INT[14]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "INT[15]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "INT[16]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "INT[17]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "INT[18]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "INT[19]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "INT[20]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "INT[21]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "INT[22]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "INT[23]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "INT[24]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "INT[25]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "INT[26]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "INT[27]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "INT[28]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "INT[29]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "INT[30]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (10041): Inferred latch for "INT[31]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (12128): Elaborating entity "bcd_7_segment" for hierarchy "bcd_7_segment:DISP" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 87
+Warning (14026): LATCH primitive "bcd_converter:CA|INT[7]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|INT[6]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|INT[5]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|INT[4]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|INT[3]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|INT[2]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|INT[1]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|INT[0]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|TEN_GRAND[3]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|TEN_GRAND[2]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|TEN_GRAND[1]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|TEN_GRAND[0]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|GRAND[3]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|GRAND[2]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|GRAND[1]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|GRAND[0]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|HUNDREDS[3]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|HUNDREDS[2]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|HUNDREDS[1]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|HUNDREDS[0]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|TENS[3]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|TENS[2]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|TENS[1]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|TENS[0]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|ONES[3]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|ONES[2]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|ONES[1]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|ONES[0]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|INT[9]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|INT[10]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|INT[11]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|INT[12]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|INT[13]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|INT[14]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|INT[15]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|INT[16]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|INT[17]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|INT[18]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|INT[19]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|INT[20]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|INT[21]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|INT[22]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|INT[23]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|INT[24]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|INT[25]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|INT[26]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|INT[27]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|INT[28]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|INT[29]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|INT[30]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|INT[31]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Warning (14026): LATCH primitive "bcd_converter:CA|INT[8]" is permanently enabled File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
+Info (278001): Inferred 8 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "bcd_converter:CA|Div0" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 41
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "bcd_converter:CA|Div1" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 42
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "bcd_converter:CA|Mod0" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 42
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "bcd_converter:CA|Div2" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 43
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "bcd_converter:CA|Mod1" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 43
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "bcd_converter:CA|Div3" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 44
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "bcd_converter:CA|Mod2" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 44
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "bcd_converter:CA|Mod3" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 45
+Info (12130): Elaborated megafunction instantiation "bcd_converter:CA|lpm_divide:Div0" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 41
+Info (12133): Instantiated megafunction "bcd_converter:CA|lpm_divide:Div0" with the following parameter: File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 41
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "15"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_0do.tdf
+    Info (12023): Found entity 1: lpm_divide_0do File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_divide_0do.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_5dg.tdf
+    Info (12023): Found entity 1: abs_divider_5dg File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/abs_divider_5dg.tdf Line: 29
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_uke.tdf
+    Info (12023): Found entity 1: alt_u_div_uke File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/alt_u_div_uke.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_t3c.tdf
+    Info (12023): Found entity 1: add_sub_t3c File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/add_sub_t3c.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_u3c.tdf
+    Info (12023): Found entity 1: add_sub_u3c File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/add_sub_u3c.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_9b9.tdf
+    Info (12023): Found entity 1: lpm_abs_9b9 File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_abs_9b9.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_8b9.tdf
+    Info (12023): Found entity 1: lpm_abs_8b9 File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_abs_8b9.tdf Line: 25
+Info (12130): Elaborated megafunction instantiation "bcd_converter:CA|lpm_divide:Div1" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 42
+Info (12133): Instantiated megafunction "bcd_converter:CA|lpm_divide:Div1" with the following parameter: File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 42
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "11"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_sco.tdf
+    Info (12023): Found entity 1: lpm_divide_sco File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_divide_sco.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_1dg.tdf
+    Info (12023): Found entity 1: abs_divider_1dg File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/abs_divider_1dg.tdf Line: 29
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_mke.tdf
+    Info (12023): Found entity 1: alt_u_div_mke File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/alt_u_div_mke.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_5b9.tdf
+    Info (12023): Found entity 1: lpm_abs_5b9 File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_abs_5b9.tdf Line: 25
+Info (12130): Elaborated megafunction instantiation "bcd_converter:CA|lpm_divide:Mod0" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 42
+Info (12133): Instantiated megafunction "bcd_converter:CA|lpm_divide:Mod0" with the following parameter: File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 42
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "32"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_25o.tdf
+    Info (12023): Found entity 1: lpm_divide_25o File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_divide_25o.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_4dg.tdf
+    Info (12023): Found entity 1: abs_divider_4dg File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/abs_divider_4dg.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_ske.tdf
+    Info (12023): Found entity 1: alt_u_div_ske File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/alt_u_div_ske.tdf Line: 27
+Info (12130): Elaborated megafunction instantiation "bcd_converter:CA|lpm_divide:Div2" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 43
+Info (12133): Instantiated megafunction "bcd_converter:CA|lpm_divide:Div2" with the following parameter: File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 43
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "8"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_ibo.tdf
+    Info (12023): Found entity 1: lpm_divide_ibo File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_divide_ibo.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_nbg.tdf
+    Info (12023): Found entity 1: abs_divider_nbg File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/abs_divider_nbg.tdf Line: 29
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_2ie.tdf
+    Info (12023): Found entity 1: alt_u_div_2ie File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/alt_u_div_2ie.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_r99.tdf
+    Info (12023): Found entity 1: lpm_abs_r99 File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_abs_r99.tdf Line: 25
+Info (12130): Elaborated megafunction instantiation "bcd_converter:CA|lpm_divide:Div3" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 44
+Info (12133): Instantiated megafunction "bcd_converter:CA|lpm_divide:Div3" with the following parameter: File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 44
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "5"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_fbo.tdf
+    Info (12023): Found entity 1: lpm_divide_fbo File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_divide_fbo.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_kbg.tdf
+    Info (12023): Found entity 1: abs_divider_kbg File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/abs_divider_kbg.tdf Line: 29
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_she.tdf
+    Info (12023): Found entity 1: alt_u_div_she File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/alt_u_div_she.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_o99.tdf
+    Info (12023): Found entity 1: lpm_abs_o99 File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_abs_o99.tdf Line: 25
+Info (13014): Ignored 239 buffer(s)
+    Info (13016): Ignored 239 CARRY_SUM buffer(s)
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "DONE" is stuck at GND File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 13
-    Warning (13410): Pin "SEVEN_SEG_SIGN[4]" is stuck at GND File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 35
-    Warning (13410): Pin "SEVEN_SEG_SIGN[5]" is stuck at GND File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 35
-    Warning (13410): Pin "SEVEN_SEG_SIGN[6]" is stuck at VCC File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 35
-    Warning (13410): Pin "SEVEN_SEG_TEN_GRAND[2]" is stuck at GND File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 35
-    Warning (13410): Pin "SEVEN_SEG_TEN_GRAND[4]" is stuck at GND File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 35
-    Warning (13410): Pin "SEVEN_SEG_GRAND[0]" is stuck at GND File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 35
-    Warning (13410): Pin "SEVEN_SEG_GRAND[1]" is stuck at GND File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 35
-    Warning (13410): Pin "SEVEN_SEG_GRAND[4]" is stuck at GND File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 35
-    Warning (13410): Pin "SEVEN_SEG_GRAND[5]" is stuck at GND File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 35
-    Warning (13410): Pin "SEVEN_SEG_HUNDREDS[2]" is stuck at GND File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 35
-    Warning (13410): Pin "SEVEN_SEG_HUNDREDS[3]" is stuck at GND File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 35
-    Warning (13410): Pin "SEVEN_SEG_HUNDREDS[4]" is stuck at GND File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 35
-    Warning (13410): Pin "SEVEN_SEG_HUNDREDS[6]" is stuck at VCC File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 35
-    Warning (13410): Pin "SEVEN_SEG_TENS[3]" is stuck at GND File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 35
-    Warning (13410): Pin "SEVEN_SEG_TENS[4]" is stuck at GND File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 35
-    Warning (13410): Pin "SEVEN_SEG_TENS[5]" is stuck at GND File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 35
-    Warning (13410): Pin "SEVEN_SEG_UNITS[0]" is stuck at GND File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 35
-    Warning (13410): Pin "SEVEN_SEG_UNITS[1]" is stuck at GND File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 35
-    Warning (13410): Pin "SEVEN_SEG_UNITS[2]" is stuck at GND File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 35
-    Warning (13410): Pin "SEVEN_SEG_UNITS[4]" is stuck at GND File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 35
-    Warning (13410): Pin "SEVEN_SEG_UNITS[5]" is stuck at GND File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 35
+    Warning (13410): Pin "SEVEN_SEG_SIGN[0]" is stuck at VCC File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 14
+    Warning (13410): Pin "SEVEN_SEG_SIGN[1]" is stuck at VCC File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 14
+    Warning (13410): Pin "SEVEN_SEG_SIGN[2]" is stuck at VCC File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 14
+    Warning (13410): Pin "SEVEN_SEG_SIGN[3]" is stuck at VCC File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 14
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 6 registers lost all their fanouts during netlist optimizations.
+Info (17049): 5 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 22 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "INPUT_A[0]" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 10
-    Warning (15610): No output dependent on input pin "INPUT_A[1]" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 10
-    Warning (15610): No output dependent on input pin "INPUT_A[2]" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 10
-    Warning (15610): No output dependent on input pin "INPUT_A[3]" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 10
-    Warning (15610): No output dependent on input pin "INPUT_A[4]" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 10
-    Warning (15610): No output dependent on input pin "INPUT_A[5]" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 10
-    Warning (15610): No output dependent on input pin "INPUT_A[6]" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 10
-    Warning (15610): No output dependent on input pin "INPUT_A[7]" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 10
-    Warning (15610): No output dependent on input pin "INPUT_A[8]" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 10
-    Warning (15610): No output dependent on input pin "INPUT_A[9]" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 10
+Warning (21074): Design contains 12 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "INPUT_B[0]" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 11
     Warning (15610): No output dependent on input pin "INPUT_B[1]" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 11
     Warning (15610): No output dependent on input pin "INPUT_B[2]" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 11
@@ -422,14 +904,14 @@ Warning (21074): Design contains 22 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "INPUT_B[9]" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 11
     Warning (15610): No output dependent on input pin "OP[0]" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 12
     Warning (15610): No output dependent on input pin "OP[1]" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 12
-Info (21057): Implemented 90 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 9211 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 25 input pins
     Info (21059): Implemented 43 output pins
-    Info (21061): Implemented 22 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 53 warnings
-    Info: Peak virtual memory: 4800 megabytes
-    Info: Processing ended: Tue Oct 07 09:50:57 2025
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:27
+    Info (21061): Implemented 9143 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 95 warnings
+    Info: Peak virtual memory: 4911 megabytes
+    Info: Processing ended: Tue Oct 07 11:16:28 2025
+    Info: Elapsed time: 00:00:20
+    Info: Total CPU time (on all processors): 00:00:32
 
 

@@ -1,0 +1,34 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity bcd_converter is
+		generic (N :integer:= 10);
+		port (BINARY: in signed((2*N)-1 downto 0);
+				OVERFLOW: in std_logic;
+			BCD_SIGN: out std_logic_vector(3 downto 0);
+			BCD_TEN_GRAND: out std_logic_vector(3 downto 0);
+			BCD_GRAND: out std_logic_vector(3 downto 0);
+			BCD_HUNDREDS: out std_logic_vector(3 downto 0);
+			BCD_TENS: out std_logic_vector(3 downto 0);
+			BCD_UNITS: out std_logic_vector(3 downto 0)
+			);
+end bcd_converter;
+
+architecture converter of bcd_converter is
+   signal abs_val : integer range 0 to (2**9) - 1 := 0;
+   signal d_thousands, d_hundreds, d_tens, d_units : integer range 0 to 9 := 0;
+	begin
+	abs_val <= to_integer(abs(p));
+	d_thousands <= abs_val / 1000;
+	d_hundreds <= abs_val/100 mod 10;
+	d_tens <= abs_val/10 mod 10;
+	d_units <= abs_val mod 10;
+	
+	bcd_thousands <= std_logic_vector(to_unsigned(d_thousands, 4)) when v = '0' else "1100";
+	bcd_hundreds <= std_logic_vector(to_unsigned(d_hundreds, 4)) when v = '0' else "1100";
+	bcd_tens <= std_logic_vector(to_unsigned(d_tens, 4)) when v = '0' else "1100";
+	bcd_units <= std_logic_vector(to_unsigned(d_units, 4)) when v = '0' else "1100";
+end converter;
+	
+	
