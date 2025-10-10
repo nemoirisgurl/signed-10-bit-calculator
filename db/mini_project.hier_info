@@ -1,5 +1,40 @@
 |mini_project
-CLK => bcd_7_segment:DISP.CLK
+CLK => bcd_7_segment:NUM_DISP_U.CLK
+CLK => DONE~reg0.CLK
+CLK => DISPLAY_TOGGLE[0].CLK
+CLK => DISPLAY_TOGGLE[1].CLK
+CLK => OPERATOR[0].CLK
+CLK => OPERATOR[1].CLK
+CLK => DATA_R[0].CLK
+CLK => DATA_R[1].CLK
+CLK => DATA_R[2].CLK
+CLK => DATA_R[3].CLK
+CLK => DATA_R[4].CLK
+CLK => DATA_R[5].CLK
+CLK => DATA_R[6].CLK
+CLK => DATA_R[7].CLK
+CLK => DATA_R[8].CLK
+CLK => DATA_R[9].CLK
+CLK => DATA_R[10].CLK
+CLK => DATA_R[11].CLK
+CLK => DATA_R[12].CLK
+CLK => DATA_R[13].CLK
+CLK => DATA_R[14].CLK
+CLK => DATA_R[15].CLK
+CLK => DATA_R[16].CLK
+CLK => DATA_R[17].CLK
+CLK => DATA_R[18].CLK
+CLK => DATA_R[19].CLK
+CLK => DATA_B[0].CLK
+CLK => DATA_B[1].CLK
+CLK => DATA_B[2].CLK
+CLK => DATA_B[3].CLK
+CLK => DATA_B[4].CLK
+CLK => DATA_B[5].CLK
+CLK => DATA_B[6].CLK
+CLK => DATA_B[7].CLK
+CLK => DATA_B[8].CLK
+CLK => DATA_B[9].CLK
 CLK => DATA_A[0].CLK
 CLK => DATA_A[1].CLK
 CLK => DATA_A[2].CLK
@@ -20,7 +55,44 @@ CLK => DATA_A[16].CLK
 CLK => DATA_A[17].CLK
 CLK => DATA_A[18].CLK
 CLK => DATA_A[19].CLK
-CLK => STATE~7.DATAIN
+CLK => debounce_btn:DEBOUNCE_U.CLK
+CLK => STATE~4.DATAIN
+RST_N => debounce_btn:DEBOUNCE_U.RST_N
+RST_N => DONE~reg0.ACLR
+RST_N => DISPLAY_TOGGLE[0].ACLR
+RST_N => DISPLAY_TOGGLE[1].ACLR
+RST_N => OPERATOR[0].ACLR
+RST_N => OPERATOR[1].ACLR
+RST_N => DATA_R[0].ACLR
+RST_N => DATA_R[1].ACLR
+RST_N => DATA_R[2].ACLR
+RST_N => DATA_R[3].ACLR
+RST_N => DATA_R[4].ACLR
+RST_N => DATA_R[5].ACLR
+RST_N => DATA_R[6].ACLR
+RST_N => DATA_R[7].ACLR
+RST_N => DATA_R[8].ACLR
+RST_N => DATA_R[9].ACLR
+RST_N => DATA_R[10].ACLR
+RST_N => DATA_R[11].ACLR
+RST_N => DATA_R[12].ACLR
+RST_N => DATA_R[13].ACLR
+RST_N => DATA_R[14].ACLR
+RST_N => DATA_R[15].ACLR
+RST_N => DATA_R[16].ACLR
+RST_N => DATA_R[17].ACLR
+RST_N => DATA_R[18].ACLR
+RST_N => DATA_R[19].ACLR
+RST_N => DATA_B[0].ACLR
+RST_N => DATA_B[1].ACLR
+RST_N => DATA_B[2].ACLR
+RST_N => DATA_B[3].ACLR
+RST_N => DATA_B[4].ACLR
+RST_N => DATA_B[5].ACLR
+RST_N => DATA_B[6].ACLR
+RST_N => DATA_B[7].ACLR
+RST_N => DATA_B[8].ACLR
+RST_N => DATA_B[9].ACLR
 RST_N => DATA_A[0].ACLR
 RST_N => DATA_A[1].ACLR
 RST_N => DATA_A[2].ACLR
@@ -41,49 +113,41 @@ RST_N => DATA_A[16].ACLR
 RST_N => DATA_A[17].ACLR
 RST_N => DATA_A[18].ACLR
 RST_N => DATA_A[19].ACLR
-RST_N => STATE~9.DATAIN
-START => STATE.OUTPUTSELECT
-START => STATE.OUTPUTSELECT
-START => STATE.OUTPUTSELECT
-START => STATE.OUTPUTSELECT
-START => STATE.OUTPUTSELECT
-START => STATE.OUTPUTSELECT
-START => STATE.OUTPUTSELECT
-START => STATE.OUTPUTSELECT
-START => STATE.OUTPUTSELECT
-INPUT_A[0] => DATA_A[0].DATAIN
-INPUT_A[1] => DATA_A[1].DATAIN
-INPUT_A[2] => DATA_A[2].DATAIN
-INPUT_A[3] => DATA_A[3].DATAIN
-INPUT_A[4] => DATA_A[4].DATAIN
-INPUT_A[5] => DATA_A[5].DATAIN
-INPUT_A[6] => DATA_A[6].DATAIN
-INPUT_A[7] => DATA_A[7].DATAIN
-INPUT_A[8] => DATA_A[8].DATAIN
-INPUT_A[9] => DATA_A[19].DATAIN
-INPUT_A[9] => DATA_A[18].DATAIN
-INPUT_A[9] => DATA_A[17].DATAIN
-INPUT_A[9] => DATA_A[16].DATAIN
-INPUT_A[9] => DATA_A[15].DATAIN
-INPUT_A[9] => DATA_A[14].DATAIN
-INPUT_A[9] => DATA_A[13].DATAIN
-INPUT_A[9] => DATA_A[12].DATAIN
-INPUT_A[9] => DATA_A[11].DATAIN
-INPUT_A[9] => DATA_A[10].DATAIN
-INPUT_A[9] => DATA_A[9].DATAIN
-INPUT_B[0] => ~NO_FANOUT~
-INPUT_B[1] => ~NO_FANOUT~
-INPUT_B[2] => ~NO_FANOUT~
-INPUT_B[3] => ~NO_FANOUT~
-INPUT_B[4] => ~NO_FANOUT~
-INPUT_B[5] => ~NO_FANOUT~
-INPUT_B[6] => ~NO_FANOUT~
-INPUT_B[7] => ~NO_FANOUT~
-INPUT_B[8] => ~NO_FANOUT~
-INPUT_B[9] => ~NO_FANOUT~
-OP[0] => ~NO_FANOUT~
-OP[1] => ~NO_FANOUT~
-DONE <= <GND>
+RST_N => STATE~6.DATAIN
+START => debounce_btn:DEBOUNCE_U.BTN
+INPUT[0] => DATA_A.DATAB
+INPUT[0] => OPERATOR.DATAB
+INPUT[0] => DATA_B.DATAB
+INPUT[1] => DATA_A.DATAB
+INPUT[1] => OPERATOR.DATAB
+INPUT[1] => DATA_B.DATAB
+INPUT[2] => DATA_A.DATAB
+INPUT[2] => DATA_B.DATAB
+INPUT[3] => DATA_A.DATAB
+INPUT[3] => DATA_B.DATAB
+INPUT[4] => DATA_A.DATAB
+INPUT[4] => DATA_B.DATAB
+INPUT[5] => DATA_A.DATAB
+INPUT[5] => DATA_B.DATAB
+INPUT[6] => DATA_A.DATAB
+INPUT[6] => DATA_B.DATAB
+INPUT[7] => DATA_A.DATAB
+INPUT[7] => DATA_B.DATAB
+INPUT[8] => DATA_A.DATAB
+INPUT[8] => DATA_B.DATAB
+INPUT[9] => DATA_A.DATAB
+INPUT[9] => DATA_A.DATAB
+INPUT[9] => DATA_A.DATAB
+INPUT[9] => DATA_A.DATAB
+INPUT[9] => DATA_A.DATAB
+INPUT[9] => DATA_A.DATAB
+INPUT[9] => DATA_A.DATAB
+INPUT[9] => DATA_A.DATAB
+INPUT[9] => DATA_A.DATAB
+INPUT[9] => DATA_A.DATAB
+INPUT[9] => DATA_A.DATAB
+INPUT[9] => DATA_B.DATAB
+DONE <= DONE~reg0.DB_MAX_OUTPUT_PORT_TYPE
 SEVEN_SEG_SIGN[0] <= SEVEN_SEG_SIGN.DB_MAX_OUTPUT_PORT_TYPE
 SEVEN_SEG_SIGN[1] <= SEVEN_SEG_SIGN.DB_MAX_OUTPUT_PORT_TYPE
 SEVEN_SEG_SIGN[2] <= SEVEN_SEG_SIGN.DB_MAX_OUTPUT_PORT_TYPE
@@ -128,7 +192,7 @@ SEVEN_SEG_UNITS[5] <= SEVEN_SEG_UNITS.DB_MAX_OUTPUT_PORT_TYPE
 SEVEN_SEG_UNITS[6] <= SEVEN_SEG_UNITS.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|mini_project|bcd_converter:CA
+|mini_project|bcd_converter:CONV_U
 BINARY[0] => INT.DATAA
 BINARY[1] => INT.DATAA
 BINARY[2] => INT.DATAA
@@ -262,7 +326,7 @@ BCD_UNITS[2] <= BCD_UNITS.DB_MAX_OUTPUT_PORT_TYPE
 BCD_UNITS[3] <= BCD_UNITS.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|mini_project|bcd_7_segment:DISP
+|mini_project|bcd_7_segment:NUM_DISP_U
 CLK => SEVEN_SEG_UNITS[0]~reg0.CLK
 CLK => SEVEN_SEG_UNITS[1]~reg0.CLK
 CLK => SEVEN_SEG_UNITS[2]~reg0.CLK
@@ -515,5 +579,305 @@ SEVEN_SEG_UNITS[3] <= SEVEN_SEG_UNITS[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 SEVEN_SEG_UNITS[4] <= SEVEN_SEG_UNITS[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 SEVEN_SEG_UNITS[5] <= SEVEN_SEG_UNITS[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 SEVEN_SEG_UNITS[6] <= SEVEN_SEG_UNITS[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mini_project|debounce_btn:DEBOUNCE_U
+CLK => cnt[0].CLK
+CLK => cnt[1].CLK
+CLK => cnt[2].CLK
+CLK => cnt[3].CLK
+CLK => cnt[4].CLK
+CLK => cnt[5].CLK
+CLK => cnt[6].CLK
+CLK => cnt[7].CLK
+CLK => cnt[8].CLK
+CLK => cnt[9].CLK
+CLK => cnt[10].CLK
+CLK => cnt[11].CLK
+CLK => cnt[12].CLK
+CLK => cnt[13].CLK
+CLK => cnt[14].CLK
+CLK => cnt[15].CLK
+CLK => cnt[16].CLK
+CLK => cnt[17].CLK
+CLK => cnt[18].CLK
+CLK => cnt[19].CLK
+CLK => cnt[20].CLK
+CLK => cnt[21].CLK
+CLK => cnt[22].CLK
+CLK => cnt[23].CLK
+CLK => cnt[24].CLK
+CLK => cnt[25].CLK
+CLK => cnt[26].CLK
+CLK => cnt[27].CLK
+CLK => cnt[28].CLK
+CLK => cnt[29].CLK
+CLK => cnt[30].CLK
+CLK => cnt[31].CLK
+CLK => PULSE~reg0.CLK
+CLK => prev_level.CLK
+CLK => db_level.CLK
+CLK => sync.CLK
+CLK => meta.CLK
+RST_N => cnt[0].ACLR
+RST_N => cnt[1].ACLR
+RST_N => cnt[2].ACLR
+RST_N => cnt[3].ACLR
+RST_N => cnt[4].ACLR
+RST_N => cnt[5].ACLR
+RST_N => cnt[6].ACLR
+RST_N => cnt[7].ACLR
+RST_N => cnt[8].ACLR
+RST_N => cnt[9].ACLR
+RST_N => cnt[10].ACLR
+RST_N => cnt[11].ACLR
+RST_N => cnt[12].ACLR
+RST_N => cnt[13].ACLR
+RST_N => cnt[14].ACLR
+RST_N => cnt[15].ACLR
+RST_N => cnt[16].ACLR
+RST_N => cnt[17].ACLR
+RST_N => cnt[18].ACLR
+RST_N => cnt[19].ACLR
+RST_N => cnt[20].ACLR
+RST_N => cnt[21].ACLR
+RST_N => cnt[22].ACLR
+RST_N => cnt[23].ACLR
+RST_N => cnt[24].ACLR
+RST_N => cnt[25].ACLR
+RST_N => cnt[26].ACLR
+RST_N => cnt[27].ACLR
+RST_N => cnt[28].ACLR
+RST_N => cnt[29].ACLR
+RST_N => cnt[30].ACLR
+RST_N => cnt[31].ACLR
+RST_N => PULSE~reg0.ACLR
+RST_N => prev_level.PRESET
+RST_N => db_level.PRESET
+RST_N => sync.PRESET
+RST_N => meta.PRESET
+BTN => meta.DATAIN
+PULSE <= PULSE~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mini_project|operator_display:SYMBOL_U
+OPERATOR[0] => Mux0.IN5
+OPERATOR[0] => Mux1.IN5
+OPERATOR[0] => Mux2.IN5
+OPERATOR[0] => Mux3.IN5
+OPERATOR[0] => Mux4.IN5
+OPERATOR[0] => Mux5.IN5
+OPERATOR[0] => Mux6.IN5
+OPERATOR[0] => Mux7.IN5
+OPERATOR[0] => Mux8.IN5
+OPERATOR[0] => Mux9.IN5
+OPERATOR[1] => Mux0.IN4
+OPERATOR[1] => Mux1.IN4
+OPERATOR[1] => Mux2.IN4
+OPERATOR[1] => Mux3.IN4
+OPERATOR[1] => Mux4.IN4
+OPERATOR[1] => Mux5.IN4
+OPERATOR[1] => Mux6.IN4
+OPERATOR[1] => Mux7.IN4
+OPERATOR[1] => Mux8.IN4
+OPERATOR[1] => Mux9.IN4
+SYM_SIGN[0] <= <VCC>
+SYM_SIGN[1] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+SYM_SIGN[2] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+SYM_SIGN[3] <= <VCC>
+SYM_SIGN[4] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+SYM_SIGN[5] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+SYM_SIGN[6] <= <GND>
+SYM_TEN_GRAND[0] <= Mux8.DB_MAX_OUTPUT_PORT_TYPE
+SYM_TEN_GRAND[1] <= <VCC>
+SYM_TEN_GRAND[2] <= Mux7.DB_MAX_OUTPUT_PORT_TYPE
+SYM_TEN_GRAND[3] <= <VCC>
+SYM_TEN_GRAND[4] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+SYM_TEN_GRAND[5] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+SYM_TEN_GRAND[6] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+SYM_GRAND[0] <= <VCC>
+SYM_GRAND[1] <= <VCC>
+SYM_GRAND[2] <= <VCC>
+SYM_GRAND[3] <= <VCC>
+SYM_GRAND[4] <= <VCC>
+SYM_GRAND[5] <= <VCC>
+SYM_GRAND[6] <= Mux9.DB_MAX_OUTPUT_PORT_TYPE
+SYM_HUNDREDS[0] <= <VCC>
+SYM_HUNDREDS[1] <= <VCC>
+SYM_HUNDREDS[2] <= <VCC>
+SYM_HUNDREDS[3] <= <VCC>
+SYM_HUNDREDS[4] <= <VCC>
+SYM_HUNDREDS[5] <= <VCC>
+SYM_HUNDREDS[6] <= <VCC>
+SYM_TENS[0] <= <VCC>
+SYM_TENS[1] <= <VCC>
+SYM_TENS[2] <= <VCC>
+SYM_TENS[3] <= <VCC>
+SYM_TENS[4] <= <VCC>
+SYM_TENS[5] <= <VCC>
+SYM_TENS[6] <= <VCC>
+SYM_UNITS[0] <= <VCC>
+SYM_UNITS[1] <= <VCC>
+SYM_UNITS[2] <= <VCC>
+SYM_UNITS[3] <= <VCC>
+SYM_UNITS[4] <= <VCC>
+SYM_UNITS[5] <= <VCC>
+SYM_UNITS[6] <= <VCC>
+
+
+|mini_project|adder_subtractor:ADD_SUB_U
+ADD_SUB => adder.IN0
+ADD_SUB => adder.IN0
+ADD_SUB => adder.IN0
+ADD_SUB => adder.IN0
+ADD_SUB => adder.IN0
+ADD_SUB => adder.IN0
+ADD_SUB => adder.IN0
+ADD_SUB => adder.IN0
+ADD_SUB => adder.IN0
+ADD_SUB => adder.IN0
+ADD_SUB => full_adder:adder:0:adder.C_IN
+INPUT_A[0] => full_adder:adder:0:adder.A
+INPUT_A[1] => full_adder:adder:1:adder.A
+INPUT_A[2] => full_adder:adder:2:adder.A
+INPUT_A[3] => full_adder:adder:3:adder.A
+INPUT_A[4] => full_adder:adder:4:adder.A
+INPUT_A[5] => full_adder:adder:5:adder.A
+INPUT_A[6] => full_adder:adder:6:adder.A
+INPUT_A[7] => full_adder:adder:7:adder.A
+INPUT_A[8] => full_adder:adder:8:adder.A
+INPUT_A[9] => full_adder:adder:9:adder.A
+INPUT_B[0] => adder.IN1
+INPUT_B[1] => adder.IN1
+INPUT_B[2] => adder.IN1
+INPUT_B[3] => adder.IN1
+INPUT_B[4] => adder.IN1
+INPUT_B[5] => adder.IN1
+INPUT_B[6] => adder.IN1
+INPUT_B[7] => adder.IN1
+INPUT_B[8] => adder.IN1
+INPUT_B[9] => adder.IN1
+CARRY_OUT <= full_adder:adder:9:adder.C_OUT
+OVERFLOW <= OVERFLOW.DB_MAX_OUTPUT_PORT_TYPE
+SUM[0] <= full_adder:adder:0:adder.SUM
+SUM[1] <= full_adder:adder:1:adder.SUM
+SUM[2] <= full_adder:adder:2:adder.SUM
+SUM[3] <= full_adder:adder:3:adder.SUM
+SUM[4] <= full_adder:adder:4:adder.SUM
+SUM[5] <= full_adder:adder:5:adder.SUM
+SUM[6] <= full_adder:adder:6:adder.SUM
+SUM[7] <= full_adder:adder:7:adder.SUM
+SUM[8] <= full_adder:adder:8:adder.SUM
+SUM[9] <= full_adder:adder:9:adder.SUM
+
+
+|mini_project|adder_subtractor:ADD_SUB_U|full_adder:\adder:0:adder
+A => C_OUT.IN0
+A => C_OUT.IN0
+B => C_OUT.IN1
+B => C_OUT.IN1
+C_IN => C_OUT.IN1
+C_IN => SUM.IN1
+C_OUT <= C_OUT.DB_MAX_OUTPUT_PORT_TYPE
+SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mini_project|adder_subtractor:ADD_SUB_U|full_adder:\adder:1:adder
+A => C_OUT.IN0
+A => C_OUT.IN0
+B => C_OUT.IN1
+B => C_OUT.IN1
+C_IN => C_OUT.IN1
+C_IN => SUM.IN1
+C_OUT <= C_OUT.DB_MAX_OUTPUT_PORT_TYPE
+SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mini_project|adder_subtractor:ADD_SUB_U|full_adder:\adder:2:adder
+A => C_OUT.IN0
+A => C_OUT.IN0
+B => C_OUT.IN1
+B => C_OUT.IN1
+C_IN => C_OUT.IN1
+C_IN => SUM.IN1
+C_OUT <= C_OUT.DB_MAX_OUTPUT_PORT_TYPE
+SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mini_project|adder_subtractor:ADD_SUB_U|full_adder:\adder:3:adder
+A => C_OUT.IN0
+A => C_OUT.IN0
+B => C_OUT.IN1
+B => C_OUT.IN1
+C_IN => C_OUT.IN1
+C_IN => SUM.IN1
+C_OUT <= C_OUT.DB_MAX_OUTPUT_PORT_TYPE
+SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mini_project|adder_subtractor:ADD_SUB_U|full_adder:\adder:4:adder
+A => C_OUT.IN0
+A => C_OUT.IN0
+B => C_OUT.IN1
+B => C_OUT.IN1
+C_IN => C_OUT.IN1
+C_IN => SUM.IN1
+C_OUT <= C_OUT.DB_MAX_OUTPUT_PORT_TYPE
+SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mini_project|adder_subtractor:ADD_SUB_U|full_adder:\adder:5:adder
+A => C_OUT.IN0
+A => C_OUT.IN0
+B => C_OUT.IN1
+B => C_OUT.IN1
+C_IN => C_OUT.IN1
+C_IN => SUM.IN1
+C_OUT <= C_OUT.DB_MAX_OUTPUT_PORT_TYPE
+SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mini_project|adder_subtractor:ADD_SUB_U|full_adder:\adder:6:adder
+A => C_OUT.IN0
+A => C_OUT.IN0
+B => C_OUT.IN1
+B => C_OUT.IN1
+C_IN => C_OUT.IN1
+C_IN => SUM.IN1
+C_OUT <= C_OUT.DB_MAX_OUTPUT_PORT_TYPE
+SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mini_project|adder_subtractor:ADD_SUB_U|full_adder:\adder:7:adder
+A => C_OUT.IN0
+A => C_OUT.IN0
+B => C_OUT.IN1
+B => C_OUT.IN1
+C_IN => C_OUT.IN1
+C_IN => SUM.IN1
+C_OUT <= C_OUT.DB_MAX_OUTPUT_PORT_TYPE
+SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mini_project|adder_subtractor:ADD_SUB_U|full_adder:\adder:8:adder
+A => C_OUT.IN0
+A => C_OUT.IN0
+B => C_OUT.IN1
+B => C_OUT.IN1
+C_IN => C_OUT.IN1
+C_IN => SUM.IN1
+C_OUT <= C_OUT.DB_MAX_OUTPUT_PORT_TYPE
+SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mini_project|adder_subtractor:ADD_SUB_U|full_adder:\adder:9:adder
+A => C_OUT.IN0
+A => C_OUT.IN0
+B => C_OUT.IN1
+B => C_OUT.IN1
+C_IN => C_OUT.IN1
+C_IN => SUM.IN1
+C_OUT <= C_OUT.DB_MAX_OUTPUT_PORT_TYPE
+SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
 
 

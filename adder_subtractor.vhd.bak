@@ -1,0 +1,12 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity adder_subtrator is
+	generic (N: integer := 10);
+	INPUT_A: in signed(N-1 downto 0);
+	INPUT_B: in signed(N-1 downto 0);
+	TOGGLE: in std_logic;
+	RESULT: out signed(N-1 downto 0);
+	OVERFLOW: out std_logic
+	);

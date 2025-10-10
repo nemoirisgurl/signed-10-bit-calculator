@@ -4,6 +4,22 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "DONE",
+					"strict" : false
+				},
+				{
+					"name" : "SEVEN_SEG_SIGN[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SEVEN_SEG_SIGN[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SEVEN_SEG_SIGN[2]",
+					"strict" : false
+				},
+				{
 					"name" : "SEVEN_SEG_SIGN[4]",
 					"strict" : false
 				},
@@ -156,10 +172,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "START",
-					"strict" : false
-				},
-				{
 					"name" : "CLK",
 					"strict" : false
 				},
@@ -168,43 +180,47 @@
 					"strict" : false
 				},
 				{
-					"name" : "INPUT_A[9]",
+					"name" : "INPUT[1]",
 					"strict" : false
 				},
 				{
-					"name" : "INPUT_A[2]",
+					"name" : "INPUT[0]",
 					"strict" : false
 				},
 				{
-					"name" : "INPUT_A[1]",
+					"name" : "INPUT[8]",
 					"strict" : false
 				},
 				{
-					"name" : "INPUT_A[4]",
+					"name" : "INPUT[7]",
 					"strict" : false
 				},
 				{
-					"name" : "INPUT_A[3]",
+					"name" : "INPUT[6]",
 					"strict" : false
 				},
 				{
-					"name" : "INPUT_A[6]",
+					"name" : "INPUT[5]",
 					"strict" : false
 				},
 				{
-					"name" : "INPUT_A[5]",
+					"name" : "INPUT[4]",
 					"strict" : false
 				},
 				{
-					"name" : "INPUT_A[8]",
+					"name" : "INPUT[3]",
 					"strict" : false
 				},
 				{
-					"name" : "INPUT_A[7]",
+					"name" : "INPUT[2]",
 					"strict" : false
 				},
 				{
-					"name" : "INPUT_A[0]",
+					"name" : "INPUT[9]",
+					"strict" : false
+				},
+				{
+					"name" : "START",
 					"strict" : false
 				}
 			]
