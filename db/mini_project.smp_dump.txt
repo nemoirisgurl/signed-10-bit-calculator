@@ -8,3 +8,9 @@ STATE.S3 0 0 0 1 0 0 1
 STATE.S4 0 0 1 0 0 0 1 
 STATE.S5 0 1 0 0 0 0 1 
 STATE.S6 1 0 0 0 0 0 1 
+
+State Machine - |mini_project|multiplier:MULTI_U|state
+Name state.FINISH state.CALC state.IDLE 
+state.IDLE 0 0 0 
+state.CALC 0 1 1 
+state.FINISH 1 0 1 

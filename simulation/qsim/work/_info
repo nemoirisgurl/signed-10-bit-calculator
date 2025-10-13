@@ -271,12 +271,12 @@ R16
 Amini_project_arch
 R5
 R6
-Z45 DEx4 work 24 mini_project_vhd_vec_tst 0 22 S[L]CVm[PZBPQN1kEkI673
+DEx4 work 24 mini_project_vhd_vec_tst 0 22 S[L]CVm[PZBPQN1kEkI673
 !i122 75
 l63
-Z46 L34 178
-Z47 VI]Q8IC9EfWmSj;e_GCI0e3
-Z48 !s100 BDL_9J8FUboU5TiIF9H2G0
+L34 178
+VI]Q8IC9EfWmSj;e_GCI0e3
+!s100 BDL_9J8FUboU5TiIF9H2G0
 R10
 32
 R41
@@ -284,6 +284,100 @@ R41
 R42
 R43
 R44
+!i113 1
+R15
+R16
+Emultiplier
+Z45 w1760316846
+R3
+R7
+R2
+R24
+R4
+R5
+R6
+R25
+!i122 84
+R0
+R8
+R9
+l0
+R26
+V83?F_CXKL2]I8j=f4?VFO0
+!s100 _3kDhUgb57Y;2hhbB?>XJ2
+R10
+32
+Z46 !s110 1760316848
+!i10b 1
+Z47 !s108 1760316848.000000
+R13
+R14
+!i113 1
+R15
+R16
+Astructure
+R3
+R7
+R2
+R24
+R4
+R5
+R6
+R25
+DEx4 work 10 multiplier 0 22 83?F_CXKL2]I8j=f4?VFO0
+!i122 84
+l297
+L47 4009
+VnYK>fjBDb:@VP8<m>C1]b1
+!s100 T:9^lkVNL<bc__`[W:ZC@2
+R10
+32
+R46
+!i10b 1
+R47
+R13
+R14
+!i113 1
+R15
+R16
+Emultiplier_vhd_vec_tst
+Z48 w1760316845
+R5
+R6
+!i122 85
+R0
+Z49 8Waveform3.vwf.vht
+Z50 FWaveform3.vwf.vht
+l0
+R20
+V:f37lD2<aegjCMRWCoWSR1
+!s100 FSlI:SI>CPX4?8;dNQniY3
+R10
+32
+R46
+!i10b 1
+R47
+Z51 !s90 -work|work|Waveform3.vwf.vht|
+Z52 !s107 Waveform3.vwf.vht|
+!i113 1
+R15
+R16
+Amultiplier_arch
+R5
+R6
+Z53 DEx4 work 22 multiplier_vhd_vec_tst 0 22 :f37lD2<aegjCMRWCoWSR1
+!i122 85
+l51
+Z54 L34 262
+VAk4ejPMhb:=i2XL4Ff:6@3
+!s100 o5NE?33h>ICCdQz9cYfL<0
+R10
+32
+R46
+!i10b 1
+R47
+R51
+R52
 !i113 1
 R15
 R16
