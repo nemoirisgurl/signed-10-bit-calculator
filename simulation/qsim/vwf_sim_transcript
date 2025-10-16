@@ -7,7 +7,7 @@ Note: if both ModelSim-Altera and ModelSim executables are available, ModelSim-A
 
 **** Generating the ModelSim Testbench ****
 
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off mini_project -c mini_project --vector_source="C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/Waveform3.vwf" --testbench_file="C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/simulation/qsim/Waveform3.vwf.vht"
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off mini_project -c mini_project --vector_source="C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/Waveform4.vwf" --testbench_file="C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/simulation/qsim/Waveform4.vwf.vht"
 
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
@@ -26,17 +26,12 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Mon Oct 13 07:54:04 2025
-Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off mini_project -c mini_project --vector_source=C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/Waveform3.vwf --testbench_file=C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/simulation/qsim/Waveform3.vwf.vht
+    Info: Processing started: Thu Oct 16 14:14:35 2025
+Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off mini_project -c mini_project --vector_source=C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/Waveform4.vwf --testbench_file=C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/simulation/qsim/Waveform4.vwf.vht
 Info (119006): Selected device 10M50DAF484C7G for design "mini_project"
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 
-sim/Waveform3.vwf.vht for simulation
-Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 22 warnings
-    Info: Peak virtual memory: 4654 megabytes
-    Info: Processing ended: Mon Oct 13 07:54:05 2025
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+arning (201005): Ignoring output pin "REMAINDER[1]" in vector source file when writing test bench files
 
 Completed successfully. 
 
@@ -61,14 +56,14 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Mon Oct 13 07:54:05 2025
+    Info: Processing started: Thu Oct 16 14:14:36 2025
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/simulation/qsim/ mini_project -c mini_project
 Info (119006): Selected device 10M50DAF484C7G for design "mini_project"
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file mini_project.vho in folder "C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4658 megabytes
-    Info: Processing ended: Mon Oct 13 07:54:06 2025
+    Info: Processing ended: Thu Oct 16 14:14:37 2025
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
@@ -86,19 +81,17 @@ c:/intelfpga_lite/20.1/modelsim_ase/win32aloem//vsim -c -do mini_project.do
 
 Reading pref.tcl
 
-# 2020.1
 
+# 2020.1
 
 # do mini_project.do
 
 # ** Warning: (vlib-34) Library already exists at "work".
 
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 07:54:08 on Oct 13,2025
+# Start time: 14:14:38 on Oct 16,2025
 # vcom -work work mini_project.vho 
-
 # -- Loading package STANDARD
-
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package VITAL_Timing
@@ -107,59 +100,61 @@ Reading pref.tcl
 # -- Loading package altera_primitives_components
 # -- Loading package fiftyfivenm_atom_pack
 # -- Loading package fiftyfivenm_components
-# -- Compiling entity multiplier
-# -- Compiling architecture structure of multiplier
+# -- Compiling entity divider
 
-# End time: 07:54:08 on Oct 13,2025, Elapsed time: 0:00:00
+# -- Compiling architecture structure of divider
+# End time: 14:14:38 on Oct 16,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 07:54:08 on Oct 13,2025
-# vcom -work work Waveform3.vwf.vht 
+# Start time: 14:14:38 on Oct 16,2025
+# vcom -work work Waveform4.vwf.vht 
+
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
-
 # -- Loading package std_logic_1164
-# -- Compiling entity multiplier_vhd_vec_tst
-# -- Compiling architecture multiplier_arch of multiplier_vhd_vec_tst
-# End time: 07:54:08 on Oct 13,2025, Elapsed time: 0:00:00
+# -- Compiling entity divider_vhd_vec_tst
+# -- Compiling architecture divider_arch of divider_vhd_vec_tst
+# End time: 14:14:38 on Oct 16,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
-# vsim -c -t 1ps -L fiftyfivenm -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.multiplier_vhd_vec_tst 
-# Start time: 07:54:09 on Oct 13,2025
+# vsim -c -t 1ps -L fiftyfivenm -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.divider_vhd_vec_tst 
+# Start time: 14:14:38 on Oct 16,2025
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
-# Loading work.multiplier_vhd_vec_tst(multiplier_arch)
+# Loading work.divider_vhd_vec_tst(divider_arch)
 # Loading ieee.vital_timing(body)
 # Loading ieee.vital_primitives(body)
 # Loading altera.dffeas_pack
 # Loading altera.altera_primitives_components
 # Loading fiftyfivenm.fiftyfivenm_atom_pack(body)
 # Loading fiftyfivenm.fiftyfivenm_components
-# Loading work.multiplier(structure)
+# Loading work.divider(structure)
 # Loading fiftyfivenm.fiftyfivenm_io_obuf(behavior)
 # Loading fiftyfivenm.fiftyfivenm_io_ibuf(behavior)
 # Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)
 # Loading altera.dffeas(vital_dffeas)
-# ** Warning: Design size of 27444 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# ** Warning: Design size of 23476 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 # Expect performance to be adversely affected.
 # after#33
 
-# End time: 07:54:11 on Oct 13,2025, Elapsed time: 0:00:02
+# Simulation time: 270250 ps
+
+# End time: 14:14:44 on Oct 16,2025, Elapsed time: 0:00:06
 # Errors: 0, Warnings: 1
 
 Completed successfully. 
 
 **** Converting ModelSim VCD to vector waveform ****
 
-Reading C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/Waveform3.vwf...
+Reading C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/Waveform4.vwf...
 
 Reading C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/simulation/qsim/mini_project.msim.vcd...
 
 Processing channel transitions... 
 
-Writing the resulting VWF to C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/simulation/qsim/mini_project_20251013075411.sim.vwf
+Writing the resulting VWF to C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/simulation/qsim/mini_project_20251016141444.sim.vwf
 
 Finished VCD to VWF conversion.
 

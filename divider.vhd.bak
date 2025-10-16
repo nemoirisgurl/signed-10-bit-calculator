@@ -1,0 +1,13 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity divider is
+	generic (N: integer := 10)
+	port (DIVIDEND: in std_logic_vector(N-1 downto 0);
+			DIVISOR: in std_logic_vector(N-1 downto 0);
+			QUOTIENT: out std_logic_vector(N-1 downto 0);
+			REMAINDER: out std_logic_vector(N-1 downto 0);
+			ERROR: out std_logic;
+			DONE: out std_logic
+		);

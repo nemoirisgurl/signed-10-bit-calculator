@@ -9,6 +9,18 @@ STATE.S4 0 0 1 0 0 0 1
 STATE.S5 0 1 0 0 0 0 1 
 STATE.S6 1 0 0 0 0 0 1 
 
+State Machine - |mini_project|divider:DIVIDE_U|state
+Name state.DONE_ST state.SIGNAPPLY state.RESTORE state.WRITE_BIT state.ADD_SUB state.SHIFT state.PREP state.CHECK_ZERO state.IDLE 
+state.IDLE 0 0 0 0 0 0 0 0 0 
+state.CHECK_ZERO 0 0 0 0 0 0 0 1 1 
+state.PREP 0 0 0 0 0 0 1 0 1 
+state.SHIFT 0 0 0 0 0 1 0 0 1 
+state.ADD_SUB 0 0 0 0 1 0 0 0 1 
+state.WRITE_BIT 0 0 0 1 0 0 0 0 1 
+state.RESTORE 0 0 1 0 0 0 0 0 1 
+state.SIGNAPPLY 0 1 0 0 0 0 0 0 1 
+state.DONE_ST 1 0 0 0 0 0 0 0 1 
+
 State Machine - |mini_project|multiplier:MULTI_U|state
 Name state.FINISH state.CALC state.IDLE 
 state.IDLE 0 0 0 

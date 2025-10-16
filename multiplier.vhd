@@ -9,7 +9,8 @@ entity multiplier is
     RST_N   : in  std_logic;
     INPUT_A : in  std_logic_vector(N-1 downto 0);
     INPUT_B : in  std_logic_vector(N-1 downto 0);
-    PRODUCT : out std_logic_vector(2*N-1 downto 0)
+    PRODUCT : out std_logic_vector(2*N-1 downto 0);
+	 MUL_DONE : out std_logic
   );
 end;
 
@@ -24,8 +25,7 @@ architecture behavioral of multiplier is
   signal BIT_CNT        : integer range 0 to N := 0;
 begin
   process(CLK, RST_N)
-    variable a_s, b_s  : signed(N-1 downto 0);
-    variable a_abs, b_abs : signed(N-1 downto 0);
+	 variable a_ext, b_ext : signed(N downto 0);
   begin
     if RST_N = '0' then
       state          <= IDLE;
@@ -35,19 +35,17 @@ begin
       BIT_CNT        <= 0;
       SIGN       <= '0';
       PRODUCT        <= (others => '0');
+		MUL_DONE <= '0';
 
     elsif rising_edge(CLK) then
+		MUL_DONE <= '0';
       case state is
         when IDLE =>
-          a_s := signed(INPUT_A);
-          b_s := signed(INPUT_B);
-          SIGN <= a_s(N-1) xor b_s(N-1);
-
-          a_abs := abs(a_s);
-          b_abs := abs(b_s);
-
-          MULTIPLICAND <= resize(unsigned(a_abs), 2*N);
-          MULTIPLIER   <= unsigned(b_abs);
+			 a_ext := resize(signed(INPUT_A), N+1);
+			 b_ext := resize(signed(INPUT_B), N+1);
+          SIGN  <= a_ext(N) xor b_ext(N);
+          MULTIPLICAND <= resize(unsigned(a_ext), 2*N);
+          MULTIPLIER   <= unsigned(abs(b_ext))(N-1 downto 0); 
           RESULT       <= (others => '0');
           BIT_CNT        <= 0;
           state          <= CALC;
@@ -70,6 +68,7 @@ begin
           else
             PRODUCT <= std_logic_vector( signed(RESULT));
           end if;
+			 MUL_DONE <= '1';
           state <= IDLE;
       end case;
     end if;

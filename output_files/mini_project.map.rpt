@@ -1,5 +1,5 @@
 Analysis & Synthesis report for mini_project
-Mon Oct 13 13:40:03 2025
+Thu Oct 16 22:24:00 2025
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -14,29 +14,37 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. State Machine - |mini_project|STATE
-  9. State Machine - |mini_project|multiplier:MULTI_U|state
- 10. User-Specified and Inferred Latches
- 11. Registers Removed During Synthesis
- 12. General Register Statistics
- 13. Inverted Register Statistics
- 14. Multiplexer Restructuring Statistics (Restructuring Performed)
- 15. Parameter Settings for User Entity Instance: Top-level Entity: |mini_project
- 16. Parameter Settings for User Entity Instance: bcd_converter:CONV_U
- 17. Parameter Settings for User Entity Instance: debounce_btn:DEBOUNCE_U
- 18. Parameter Settings for User Entity Instance: adder_subtractor:ADD_SUB_U
- 19. Parameter Settings for User Entity Instance: multiplier:MULTI_U
- 20. Parameter Settings for Inferred Entity Instance: bcd_converter:CONV_U|lpm_divide:Div0
- 21. Parameter Settings for Inferred Entity Instance: bcd_converter:CONV_U|lpm_divide:Div1
- 22. Parameter Settings for Inferred Entity Instance: bcd_converter:CONV_U|lpm_divide:Mod0
- 23. Parameter Settings for Inferred Entity Instance: bcd_converter:CONV_U|lpm_divide:Div2
- 24. Parameter Settings for Inferred Entity Instance: bcd_converter:CONV_U|lpm_divide:Mod1
- 25. Parameter Settings for Inferred Entity Instance: bcd_converter:CONV_U|lpm_divide:Div3
- 26. Parameter Settings for Inferred Entity Instance: bcd_converter:CONV_U|lpm_divide:Mod2
- 27. Parameter Settings for Inferred Entity Instance: bcd_converter:CONV_U|lpm_divide:Mod3
- 28. Port Connectivity Checks: "adder_subtractor:ADD_SUB_U|full_adder:\adder:9:adder"
- 29. Post-Synthesis Netlist Statistics for Top Partition
- 30. Elapsed Time Per Partition
- 31. Analysis & Synthesis Messages
+  9. State Machine - |mini_project|divider:DIVIDE_U|state
+ 10. State Machine - |mini_project|multiplier:MULTI_U|state
+ 11. User-Specified and Inferred Latches
+ 12. Registers Removed During Synthesis
+ 13. General Register Statistics
+ 14. Inverted Register Statistics
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Parameter Settings for User Entity Instance: Top-level Entity: |mini_project
+ 17. Parameter Settings for User Entity Instance: bcd_converter:CONV_U
+ 18. Parameter Settings for User Entity Instance: debounce_btn:DEBOUNCE_U
+ 19. Parameter Settings for User Entity Instance: adder_subtractor:ADD_SUB_U
+ 20. Parameter Settings for User Entity Instance: multiplier:MULTI_U
+ 21. Parameter Settings for User Entity Instance: divider:DIVIDE_U
+ 22. Parameter Settings for Inferred Entity Instance: lpm_divide:Div0
+ 23. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
+ 24. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1
+ 25. Parameter Settings for Inferred Entity Instance: lpm_divide:Div1
+ 26. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod2
+ 27. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod3
+ 28. Parameter Settings for Inferred Entity Instance: bcd_converter:CONV_U|lpm_divide:Div0
+ 29. Parameter Settings for Inferred Entity Instance: bcd_converter:CONV_U|lpm_divide:Div1
+ 30. Parameter Settings for Inferred Entity Instance: bcd_converter:CONV_U|lpm_divide:Mod0
+ 31. Parameter Settings for Inferred Entity Instance: bcd_converter:CONV_U|lpm_divide:Div2
+ 32. Parameter Settings for Inferred Entity Instance: bcd_converter:CONV_U|lpm_divide:Mod1
+ 33. Parameter Settings for Inferred Entity Instance: bcd_converter:CONV_U|lpm_divide:Div3
+ 34. Parameter Settings for Inferred Entity Instance: bcd_converter:CONV_U|lpm_divide:Mod2
+ 35. Parameter Settings for Inferred Entity Instance: bcd_converter:CONV_U|lpm_divide:Mod3
+ 36. Port Connectivity Checks: "adder_subtractor:ADD_SUB_U|full_adder:\adder:9:adder"
+ 37. Post-Synthesis Netlist Statistics for Top Partition
+ 38. Elapsed Time Per Partition
+ 39. Analysis & Synthesis Messages
 
 
 
@@ -63,15 +71,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Oct 13 13:40:03 2025       ;
+; Analysis & Synthesis Status        ; Successful - Thu Oct 16 22:24:00 2025       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; mini_project                                ;
 ; Top-level Entity Name              ; mini_project                                ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 9,464                                       ;
-;     Total combinational functions  ; 9,434                                       ;
-;     Dedicated logic registers      ; 204                                         ;
-; Total registers                    ; 204                                         ;
+; Total logic elements               ; 10,160                                      ;
+;     Total combinational functions  ; 10,124                                      ;
+;     Dedicated logic registers      ; 274                                         ;
+; Total registers                    ; 274                                         ;
 ; Total pins                         ; 56                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -187,46 +195,59 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                   ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                               ; Library ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
-; operator_display.vhd             ; yes             ; User VHDL File               ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/operator_display.vhd    ;         ;
-; mini_project.vhd                 ; yes             ; User VHDL File               ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd        ;         ;
-; bcd_converter.vhd                ; yes             ; User VHDL File               ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd       ;         ;
-; bcd_7_segment.vhd                ; yes             ; User VHDL File               ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_7_segment.vhd       ;         ;
-; debounce_btn.vhd                 ; yes             ; User VHDL File               ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/debounce_btn.vhd        ;         ;
-; adder_subtractor.vhd             ; yes             ; User VHDL File               ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/adder_subtractor.vhd    ;         ;
-; full_adder.vhd                   ; yes             ; User VHDL File               ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/full_adder.vhd          ;         ;
-; multiplier.vhd                   ; yes             ; User VHDL File               ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/multiplier.vhd          ;         ;
-; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
-; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
-; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
-; aglobal201.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc      ;         ;
-; db/lpm_divide_0do.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_divide_0do.tdf   ;         ;
-; db/abs_divider_5dg.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/abs_divider_5dg.tdf  ;         ;
-; db/alt_u_div_uke.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/alt_u_div_uke.tdf    ;         ;
-; db/add_sub_t3c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/add_sub_t3c.tdf      ;         ;
-; db/add_sub_u3c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/add_sub_u3c.tdf      ;         ;
-; db/lpm_abs_9b9.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_abs_9b9.tdf      ;         ;
-; db/lpm_abs_8b9.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_abs_8b9.tdf      ;         ;
-; db/lpm_divide_sco.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_divide_sco.tdf   ;         ;
-; db/abs_divider_1dg.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/abs_divider_1dg.tdf  ;         ;
-; db/alt_u_div_mke.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/alt_u_div_mke.tdf    ;         ;
-; db/lpm_abs_5b9.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_abs_5b9.tdf      ;         ;
-; db/lpm_divide_25o.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_divide_25o.tdf   ;         ;
-; db/abs_divider_4dg.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/abs_divider_4dg.tdf  ;         ;
-; db/alt_u_div_ske.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/alt_u_div_ske.tdf    ;         ;
-; db/lpm_divide_ibo.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_divide_ibo.tdf   ;         ;
-; db/abs_divider_nbg.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/abs_divider_nbg.tdf  ;         ;
-; db/alt_u_div_2ie.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/alt_u_div_2ie.tdf    ;         ;
-; db/lpm_abs_r99.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_abs_r99.tdf      ;         ;
-; db/lpm_divide_fbo.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_divide_fbo.tdf   ;         ;
-; db/abs_divider_kbg.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/abs_divider_kbg.tdf  ;         ;
-; db/alt_u_div_she.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/alt_u_div_she.tdf    ;         ;
-; db/lpm_abs_o99.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_abs_o99.tdf      ;         ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                      ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                  ; Library ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------+---------+
+; operator_display.vhd             ; yes             ; User VHDL File               ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/operator_display.vhd       ;         ;
+; mini_project.vhd                 ; yes             ; User VHDL File               ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd           ;         ;
+; bcd_converter.vhd                ; yes             ; User VHDL File               ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd          ;         ;
+; bcd_7_segment.vhd                ; yes             ; User VHDL File               ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_7_segment.vhd          ;         ;
+; debounce_btn.vhd                 ; yes             ; User VHDL File               ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/debounce_btn.vhd           ;         ;
+; adder_subtractor.vhd             ; yes             ; User VHDL File               ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/adder_subtractor.vhd       ;         ;
+; full_adder.vhd                   ; yes             ; User VHDL File               ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/full_adder.vhd             ;         ;
+; multiplier.vhd                   ; yes             ; User VHDL File               ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/multiplier.vhd             ;         ;
+; divider.vhd                      ; yes             ; User VHDL File               ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/divider.vhd                ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_divide.tdf         ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/abs_divider.inc        ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/sign_div_unsign.inc    ;         ;
+; aglobal201.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc         ;         ;
+; db/lpm_divide_itl.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_divide_itl.tdf      ;         ;
+; db/sign_div_unsign_klh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/sign_div_unsign_klh.tdf ;         ;
+; db/alt_u_div_ihe.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/alt_u_div_ihe.tdf       ;         ;
+; db/add_sub_t3c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/add_sub_t3c.tdf         ;         ;
+; db/add_sub_u3c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/add_sub_u3c.tdf         ;         ;
+; db/lpm_divide_2nl.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_divide_2nl.tdf      ;         ;
+; db/sign_div_unsign_1nh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/sign_div_unsign_1nh.tdf ;         ;
+; db/alt_u_div_cke.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/alt_u_div_cke.tdf       ;         ;
+; db/lpm_divide_asl.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_divide_asl.tdf      ;         ;
+; db/sign_div_unsign_ckh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/sign_div_unsign_ckh.tdf ;         ;
+; db/alt_u_div_2fe.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/alt_u_div_2fe.tdf       ;         ;
+; db/lpm_divide_ikl.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_divide_ikl.tdf      ;         ;
+; db/sign_div_unsign_hkh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/sign_div_unsign_hkh.tdf ;         ;
+; db/alt_u_div_cfe.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/alt_u_div_cfe.tdf       ;         ;
+; db/lpm_divide_0do.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_divide_0do.tdf      ;         ;
+; db/abs_divider_5dg.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/abs_divider_5dg.tdf     ;         ;
+; db/alt_u_div_uke.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/alt_u_div_uke.tdf       ;         ;
+; db/lpm_abs_9b9.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_abs_9b9.tdf         ;         ;
+; db/lpm_abs_8b9.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_abs_8b9.tdf         ;         ;
+; db/lpm_divide_sco.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_divide_sco.tdf      ;         ;
+; db/abs_divider_1dg.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/abs_divider_1dg.tdf     ;         ;
+; db/alt_u_div_mke.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/alt_u_div_mke.tdf       ;         ;
+; db/lpm_abs_5b9.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_abs_5b9.tdf         ;         ;
+; db/lpm_divide_25o.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_divide_25o.tdf      ;         ;
+; db/abs_divider_4dg.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/abs_divider_4dg.tdf     ;         ;
+; db/alt_u_div_ske.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/alt_u_div_ske.tdf       ;         ;
+; db/lpm_divide_ibo.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_divide_ibo.tdf      ;         ;
+; db/abs_divider_nbg.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/abs_divider_nbg.tdf     ;         ;
+; db/alt_u_div_2ie.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/alt_u_div_2ie.tdf       ;         ;
+; db/lpm_abs_r99.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_abs_r99.tdf         ;         ;
+; db/lpm_divide_fbo.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_divide_fbo.tdf      ;         ;
+; db/abs_divider_kbg.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/abs_divider_kbg.tdf     ;         ;
+; db/alt_u_div_she.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/alt_u_div_she.tdf       ;         ;
+; db/lpm_abs_o99.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_abs_o99.tdf         ;         ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------+---------+
 
 
 +----------------------------------------------------------------------------+
@@ -234,20 +255,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+------------------------------+
 ; Resource                                    ; Usage                        ;
 +---------------------------------------------+------------------------------+
-; Estimated Total logic elements              ; 9,464                        ;
+; Estimated Total logic elements              ; 10,160                       ;
 ;                                             ;                              ;
-; Total combinational functions               ; 9434                         ;
+; Total combinational functions               ; 10124                        ;
 ; Logic element usage by number of LUT inputs ;                              ;
-;     -- 4 input functions                    ; 2910                         ;
-;     -- 3 input functions                    ; 3043                         ;
-;     -- <=2 input functions                  ; 3481                         ;
+;     -- 4 input functions                    ; 3072                         ;
+;     -- 3 input functions                    ; 3281                         ;
+;     -- <=2 input functions                  ; 3771                         ;
 ;                                             ;                              ;
 ; Logic elements by mode                      ;                              ;
-;     -- normal mode                          ; 6449                         ;
-;     -- arithmetic mode                      ; 2985                         ;
+;     -- normal mode                          ; 6917                         ;
+;     -- arithmetic mode                      ; 3207                         ;
 ;                                             ;                              ;
-; Total registers                             ; 204                          ;
-;     -- Dedicated logic registers            ; 204                          ;
+; Total registers                             ; 274                          ;
+;     -- Dedicated logic registers            ; 274                          ;
 ;     -- I/O registers                        ; 0                            ;
 ;                                             ;                              ;
 ; I/O pins                                    ; 56                           ;
@@ -255,73 +276,99 @@ https://fpgasoftware.intel.com/eula.
 ; Embedded Multiplier 9-bit elements          ; 0                            ;
 ;                                             ;                              ;
 ; Maximum fan-out node                        ; bcd_converter:CONV_U|INT[31] ;
-; Maximum fan-out                             ; 422                          ;
-; Total fan-out                               ; 28137                        ;
-; Average fan-out                             ; 2.89                         ;
+; Maximum fan-out                             ; 423                          ;
+; Total fan-out                               ; 30222                        ;
+; Average fan-out                             ; 2.88                         ;
 +---------------------------------------------+------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                               ;
-+------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
-; Compilation Hierarchy Node               ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                             ; Entity Name      ; Library Name ;
-+------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
-; |mini_project                            ; 9434 (84)           ; 204 (52)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 56   ; 0            ; 0          ; |mini_project                                                                                                                   ; mini_project     ; work         ;
-;    |adder_subtractor:ADD_SUB_U|          ; 17 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|adder_subtractor:ADD_SUB_U                                                                                        ; adder_subtractor ; work         ;
-;       |full_adder:\adder:0:adder|        ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|adder_subtractor:ADD_SUB_U|full_adder:\adder:0:adder                                                              ; full_adder       ; work         ;
-;       |full_adder:\adder:1:adder|        ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|adder_subtractor:ADD_SUB_U|full_adder:\adder:1:adder                                                              ; full_adder       ; work         ;
-;       |full_adder:\adder:2:adder|        ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|adder_subtractor:ADD_SUB_U|full_adder:\adder:2:adder                                                              ; full_adder       ; work         ;
-;       |full_adder:\adder:3:adder|        ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|adder_subtractor:ADD_SUB_U|full_adder:\adder:3:adder                                                              ; full_adder       ; work         ;
-;       |full_adder:\adder:4:adder|        ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|adder_subtractor:ADD_SUB_U|full_adder:\adder:4:adder                                                              ; full_adder       ; work         ;
-;       |full_adder:\adder:5:adder|        ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|adder_subtractor:ADD_SUB_U|full_adder:\adder:5:adder                                                              ; full_adder       ; work         ;
-;       |full_adder:\adder:6:adder|        ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|adder_subtractor:ADD_SUB_U|full_adder:\adder:6:adder                                                              ; full_adder       ; work         ;
-;       |full_adder:\adder:7:adder|        ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|adder_subtractor:ADD_SUB_U|full_adder:\adder:7:adder                                                              ; full_adder       ; work         ;
-;       |full_adder:\adder:8:adder|        ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|adder_subtractor:ADD_SUB_U|full_adder:\adder:8:adder                                                              ; full_adder       ; work         ;
-;    |bcd_7_segment:NUM_DISP_U|            ; 36 (36)             ; 37 (37)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_7_segment:NUM_DISP_U                                                                                          ; bcd_7_segment    ; work         ;
-;    |bcd_converter:CONV_U|                ; 9141 (332)          ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U                                                                                              ; bcd_converter    ; work         ;
-;       |lpm_divide:Div0|                  ; 835 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Div0                                                                              ; lpm_divide       ; work         ;
-;          |lpm_divide_0do:auto_generated| ; 835 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Div0|lpm_divide_0do:auto_generated                                                ; lpm_divide_0do   ; work         ;
-;             |abs_divider_5dg:divider|    ; 835 (8)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Div0|lpm_divide_0do:auto_generated|abs_divider_5dg:divider                        ; abs_divider_5dg  ; work         ;
-;                |alt_u_div_uke:divider|   ; 818 (818)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Div0|lpm_divide_0do:auto_generated|abs_divider_5dg:divider|alt_u_div_uke:divider  ; alt_u_div_uke    ; work         ;
-;                |lpm_abs_8b9:my_abs_num|  ; 9 (9)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Div0|lpm_divide_0do:auto_generated|abs_divider_5dg:divider|lpm_abs_8b9:my_abs_num ; lpm_abs_8b9      ; work         ;
-;       |lpm_divide:Div1|                  ; 829 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Div1                                                                              ; lpm_divide       ; work         ;
-;          |lpm_divide_sco:auto_generated| ; 829 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Div1|lpm_divide_sco:auto_generated                                                ; lpm_divide_sco   ; work         ;
-;             |abs_divider_1dg:divider|    ; 829 (52)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Div1|lpm_divide_sco:auto_generated|abs_divider_1dg:divider                        ; abs_divider_1dg  ; work         ;
-;                |alt_u_div_mke:divider|   ; 744 (744)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Div1|lpm_divide_sco:auto_generated|abs_divider_1dg:divider|alt_u_div_mke:divider  ; alt_u_div_mke    ; work         ;
-;                |lpm_abs_8b9:my_abs_num|  ; 33 (33)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Div1|lpm_divide_sco:auto_generated|abs_divider_1dg:divider|lpm_abs_8b9:my_abs_num ; lpm_abs_8b9      ; work         ;
-;       |lpm_divide:Div2|                  ; 685 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Div2                                                                              ; lpm_divide       ; work         ;
-;          |lpm_divide_ibo:auto_generated| ; 685 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Div2|lpm_divide_ibo:auto_generated                                                ; lpm_divide_ibo   ; work         ;
-;             |abs_divider_nbg:divider|    ; 685 (58)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Div2|lpm_divide_ibo:auto_generated|abs_divider_nbg:divider                        ; abs_divider_nbg  ; work         ;
-;                |alt_u_div_2ie:divider|   ; 625 (625)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Div2|lpm_divide_ibo:auto_generated|abs_divider_nbg:divider|alt_u_div_2ie:divider  ; alt_u_div_2ie    ; work         ;
-;                |lpm_abs_8b9:my_abs_num|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Div2|lpm_divide_ibo:auto_generated|abs_divider_nbg:divider|lpm_abs_8b9:my_abs_num ; lpm_abs_8b9      ; work         ;
-;       |lpm_divide:Div3|                  ; 515 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Div3                                                                              ; lpm_divide       ; work         ;
-;          |lpm_divide_fbo:auto_generated| ; 515 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Div3|lpm_divide_fbo:auto_generated                                                ; lpm_divide_fbo   ; work         ;
-;             |abs_divider_kbg:divider|    ; 515 (62)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Div3|lpm_divide_fbo:auto_generated|abs_divider_kbg:divider                        ; abs_divider_kbg  ; work         ;
-;                |alt_u_div_she:divider|   ; 449 (449)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Div3|lpm_divide_fbo:auto_generated|abs_divider_kbg:divider|alt_u_div_she:divider  ; alt_u_div_she    ; work         ;
-;                |lpm_abs_8b9:my_abs_num|  ; 4 (4)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Div3|lpm_divide_fbo:auto_generated|abs_divider_kbg:divider|lpm_abs_8b9:my_abs_num ; lpm_abs_8b9      ; work         ;
-;       |lpm_divide:Mod0|                  ; 1389 (0)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Mod0                                                                              ; lpm_divide       ; work         ;
-;          |lpm_divide_25o:auto_generated| ; 1389 (0)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Mod0|lpm_divide_25o:auto_generated                                                ; lpm_divide_25o   ; work         ;
-;             |abs_divider_4dg:divider|    ; 1389 (8)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Mod0|lpm_divide_25o:auto_generated|abs_divider_4dg:divider                        ; abs_divider_4dg  ; work         ;
-;                |alt_u_div_ske:divider|   ; 1357 (1357)         ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Mod0|lpm_divide_25o:auto_generated|abs_divider_4dg:divider|alt_u_div_ske:divider  ; alt_u_div_ske    ; work         ;
-;                |lpm_abs_8b9:my_abs_num|  ; 24 (24)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Mod0|lpm_divide_25o:auto_generated|abs_divider_4dg:divider|lpm_abs_8b9:my_abs_num ; lpm_abs_8b9      ; work         ;
-;       |lpm_divide:Mod1|                  ; 1480 (0)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Mod1                                                                              ; lpm_divide       ; work         ;
-;          |lpm_divide_25o:auto_generated| ; 1480 (0)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Mod1|lpm_divide_25o:auto_generated                                                ; lpm_divide_25o   ; work         ;
-;             |abs_divider_4dg:divider|    ; 1480 (9)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Mod1|lpm_divide_25o:auto_generated|abs_divider_4dg:divider                        ; abs_divider_4dg  ; work         ;
-;                |alt_u_div_ske:divider|   ; 1441 (1441)         ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Mod1|lpm_divide_25o:auto_generated|abs_divider_4dg:divider|alt_u_div_ske:divider  ; alt_u_div_ske    ; work         ;
-;                |lpm_abs_8b9:my_abs_num|  ; 30 (30)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Mod1|lpm_divide_25o:auto_generated|abs_divider_4dg:divider|lpm_abs_8b9:my_abs_num ; lpm_abs_8b9      ; work         ;
-;       |lpm_divide:Mod2|                  ; 1555 (0)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Mod2                                                                              ; lpm_divide       ; work         ;
-;          |lpm_divide_25o:auto_generated| ; 1555 (0)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Mod2|lpm_divide_25o:auto_generated                                                ; lpm_divide_25o   ; work         ;
-;             |abs_divider_4dg:divider|    ; 1555 (9)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Mod2|lpm_divide_25o:auto_generated|abs_divider_4dg:divider                        ; abs_divider_4dg  ; work         ;
-;                |alt_u_div_ske:divider|   ; 1497 (1497)         ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Mod2|lpm_divide_25o:auto_generated|abs_divider_4dg:divider|alt_u_div_ske:divider  ; alt_u_div_ske    ; work         ;
-;                |lpm_abs_8b9:my_abs_num|  ; 49 (49)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Mod2|lpm_divide_25o:auto_generated|abs_divider_4dg:divider|lpm_abs_8b9:my_abs_num ; lpm_abs_8b9      ; work         ;
-;       |lpm_divide:Mod3|                  ; 1521 (0)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Mod3                                                                              ; lpm_divide       ; work         ;
-;          |lpm_divide_25o:auto_generated| ; 1521 (0)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Mod3|lpm_divide_25o:auto_generated                                                ; lpm_divide_25o   ; work         ;
-;             |abs_divider_4dg:divider|    ; 1521 (8)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Mod3|lpm_divide_25o:auto_generated|abs_divider_4dg:divider                        ; abs_divider_4dg  ; work         ;
-;                |alt_u_div_ske:divider|   ; 1510 (1510)         ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Mod3|lpm_divide_25o:auto_generated|abs_divider_4dg:divider|alt_u_div_ske:divider  ; alt_u_div_ske    ; work         ;
-;                |lpm_abs_8b9:my_abs_num|  ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Mod3|lpm_divide_25o:auto_generated|abs_divider_4dg:divider|lpm_abs_8b9:my_abs_num ; lpm_abs_8b9      ; work         ;
-;    |debounce_btn:DEBOUNCE_U|             ; 47 (47)             ; 37 (37)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|debounce_btn:DEBOUNCE_U                                                                                           ; debounce_btn     ; work         ;
-;    |multiplier:MULTI_U|                  ; 109 (109)           ; 78 (78)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|multiplier:MULTI_U                                                                                                ; multiplier       ; work         ;
-+------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                  ;
++------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node               ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                             ; Entity Name         ; Library Name ;
++------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |mini_project                            ; 10124 (170)         ; 274 (53)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 56   ; 0            ; 0          ; |mini_project                                                                                                                   ; mini_project        ; work         ;
+;    |adder_subtractor:ADD_SUB_U|          ; 17 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|adder_subtractor:ADD_SUB_U                                                                                        ; adder_subtractor    ; work         ;
+;       |full_adder:\adder:0:adder|        ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|adder_subtractor:ADD_SUB_U|full_adder:\adder:0:adder                                                              ; full_adder          ; work         ;
+;       |full_adder:\adder:1:adder|        ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|adder_subtractor:ADD_SUB_U|full_adder:\adder:1:adder                                                              ; full_adder          ; work         ;
+;       |full_adder:\adder:2:adder|        ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|adder_subtractor:ADD_SUB_U|full_adder:\adder:2:adder                                                              ; full_adder          ; work         ;
+;       |full_adder:\adder:3:adder|        ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|adder_subtractor:ADD_SUB_U|full_adder:\adder:3:adder                                                              ; full_adder          ; work         ;
+;       |full_adder:\adder:4:adder|        ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|adder_subtractor:ADD_SUB_U|full_adder:\adder:4:adder                                                              ; full_adder          ; work         ;
+;       |full_adder:\adder:5:adder|        ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|adder_subtractor:ADD_SUB_U|full_adder:\adder:5:adder                                                              ; full_adder          ; work         ;
+;       |full_adder:\adder:6:adder|        ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|adder_subtractor:ADD_SUB_U|full_adder:\adder:6:adder                                                              ; full_adder          ; work         ;
+;       |full_adder:\adder:7:adder|        ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|adder_subtractor:ADD_SUB_U|full_adder:\adder:7:adder                                                              ; full_adder          ; work         ;
+;       |full_adder:\adder:8:adder|        ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|adder_subtractor:ADD_SUB_U|full_adder:\adder:8:adder                                                              ; full_adder          ; work         ;
+;    |bcd_7_segment:NUM_DISP_U|            ; 36 (36)             ; 38 (38)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_7_segment:NUM_DISP_U                                                                                          ; bcd_7_segment       ; work         ;
+;    |bcd_converter:CONV_U|                ; 9119 (310)          ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U                                                                                              ; bcd_converter       ; work         ;
+;       |lpm_divide:Div0|                  ; 835 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Div0                                                                              ; lpm_divide          ; work         ;
+;          |lpm_divide_0do:auto_generated| ; 835 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Div0|lpm_divide_0do:auto_generated                                                ; lpm_divide_0do      ; work         ;
+;             |abs_divider_5dg:divider|    ; 835 (8)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Div0|lpm_divide_0do:auto_generated|abs_divider_5dg:divider                        ; abs_divider_5dg     ; work         ;
+;                |alt_u_div_uke:divider|   ; 818 (818)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Div0|lpm_divide_0do:auto_generated|abs_divider_5dg:divider|alt_u_div_uke:divider  ; alt_u_div_uke       ; work         ;
+;                |lpm_abs_8b9:my_abs_num|  ; 9 (9)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Div0|lpm_divide_0do:auto_generated|abs_divider_5dg:divider|lpm_abs_8b9:my_abs_num ; lpm_abs_8b9         ; work         ;
+;       |lpm_divide:Div1|                  ; 829 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Div1                                                                              ; lpm_divide          ; work         ;
+;          |lpm_divide_sco:auto_generated| ; 829 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Div1|lpm_divide_sco:auto_generated                                                ; lpm_divide_sco      ; work         ;
+;             |abs_divider_1dg:divider|    ; 829 (52)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Div1|lpm_divide_sco:auto_generated|abs_divider_1dg:divider                        ; abs_divider_1dg     ; work         ;
+;                |alt_u_div_mke:divider|   ; 744 (744)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Div1|lpm_divide_sco:auto_generated|abs_divider_1dg:divider|alt_u_div_mke:divider  ; alt_u_div_mke       ; work         ;
+;                |lpm_abs_8b9:my_abs_num|  ; 33 (33)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Div1|lpm_divide_sco:auto_generated|abs_divider_1dg:divider|lpm_abs_8b9:my_abs_num ; lpm_abs_8b9         ; work         ;
+;       |lpm_divide:Div2|                  ; 685 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Div2                                                                              ; lpm_divide          ; work         ;
+;          |lpm_divide_ibo:auto_generated| ; 685 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Div2|lpm_divide_ibo:auto_generated                                                ; lpm_divide_ibo      ; work         ;
+;             |abs_divider_nbg:divider|    ; 685 (58)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Div2|lpm_divide_ibo:auto_generated|abs_divider_nbg:divider                        ; abs_divider_nbg     ; work         ;
+;                |alt_u_div_2ie:divider|   ; 625 (625)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Div2|lpm_divide_ibo:auto_generated|abs_divider_nbg:divider|alt_u_div_2ie:divider  ; alt_u_div_2ie       ; work         ;
+;                |lpm_abs_8b9:my_abs_num|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Div2|lpm_divide_ibo:auto_generated|abs_divider_nbg:divider|lpm_abs_8b9:my_abs_num ; lpm_abs_8b9         ; work         ;
+;       |lpm_divide:Div3|                  ; 515 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Div3                                                                              ; lpm_divide          ; work         ;
+;          |lpm_divide_fbo:auto_generated| ; 515 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Div3|lpm_divide_fbo:auto_generated                                                ; lpm_divide_fbo      ; work         ;
+;             |abs_divider_kbg:divider|    ; 515 (62)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Div3|lpm_divide_fbo:auto_generated|abs_divider_kbg:divider                        ; abs_divider_kbg     ; work         ;
+;                |alt_u_div_she:divider|   ; 449 (449)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Div3|lpm_divide_fbo:auto_generated|abs_divider_kbg:divider|alt_u_div_she:divider  ; alt_u_div_she       ; work         ;
+;                |lpm_abs_8b9:my_abs_num|  ; 4 (4)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Div3|lpm_divide_fbo:auto_generated|abs_divider_kbg:divider|lpm_abs_8b9:my_abs_num ; lpm_abs_8b9         ; work         ;
+;       |lpm_divide:Mod0|                  ; 1389 (0)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Mod0                                                                              ; lpm_divide          ; work         ;
+;          |lpm_divide_25o:auto_generated| ; 1389 (0)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Mod0|lpm_divide_25o:auto_generated                                                ; lpm_divide_25o      ; work         ;
+;             |abs_divider_4dg:divider|    ; 1389 (8)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Mod0|lpm_divide_25o:auto_generated|abs_divider_4dg:divider                        ; abs_divider_4dg     ; work         ;
+;                |alt_u_div_ske:divider|   ; 1357 (1357)         ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Mod0|lpm_divide_25o:auto_generated|abs_divider_4dg:divider|alt_u_div_ske:divider  ; alt_u_div_ske       ; work         ;
+;                |lpm_abs_8b9:my_abs_num|  ; 24 (24)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Mod0|lpm_divide_25o:auto_generated|abs_divider_4dg:divider|lpm_abs_8b9:my_abs_num ; lpm_abs_8b9         ; work         ;
+;       |lpm_divide:Mod1|                  ; 1480 (0)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Mod1                                                                              ; lpm_divide          ; work         ;
+;          |lpm_divide_25o:auto_generated| ; 1480 (0)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Mod1|lpm_divide_25o:auto_generated                                                ; lpm_divide_25o      ; work         ;
+;             |abs_divider_4dg:divider|    ; 1480 (9)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Mod1|lpm_divide_25o:auto_generated|abs_divider_4dg:divider                        ; abs_divider_4dg     ; work         ;
+;                |alt_u_div_ske:divider|   ; 1441 (1441)         ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Mod1|lpm_divide_25o:auto_generated|abs_divider_4dg:divider|alt_u_div_ske:divider  ; alt_u_div_ske       ; work         ;
+;                |lpm_abs_8b9:my_abs_num|  ; 30 (30)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Mod1|lpm_divide_25o:auto_generated|abs_divider_4dg:divider|lpm_abs_8b9:my_abs_num ; lpm_abs_8b9         ; work         ;
+;       |lpm_divide:Mod2|                  ; 1555 (0)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Mod2                                                                              ; lpm_divide          ; work         ;
+;          |lpm_divide_25o:auto_generated| ; 1555 (0)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Mod2|lpm_divide_25o:auto_generated                                                ; lpm_divide_25o      ; work         ;
+;             |abs_divider_4dg:divider|    ; 1555 (9)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Mod2|lpm_divide_25o:auto_generated|abs_divider_4dg:divider                        ; abs_divider_4dg     ; work         ;
+;                |alt_u_div_ske:divider|   ; 1497 (1497)         ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Mod2|lpm_divide_25o:auto_generated|abs_divider_4dg:divider|alt_u_div_ske:divider  ; alt_u_div_ske       ; work         ;
+;                |lpm_abs_8b9:my_abs_num|  ; 49 (49)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Mod2|lpm_divide_25o:auto_generated|abs_divider_4dg:divider|lpm_abs_8b9:my_abs_num ; lpm_abs_8b9         ; work         ;
+;       |lpm_divide:Mod3|                  ; 1521 (0)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Mod3                                                                              ; lpm_divide          ; work         ;
+;          |lpm_divide_25o:auto_generated| ; 1521 (0)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Mod3|lpm_divide_25o:auto_generated                                                ; lpm_divide_25o      ; work         ;
+;             |abs_divider_4dg:divider|    ; 1521 (8)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Mod3|lpm_divide_25o:auto_generated|abs_divider_4dg:divider                        ; abs_divider_4dg     ; work         ;
+;                |alt_u_div_ske:divider|   ; 1510 (1510)         ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Mod3|lpm_divide_25o:auto_generated|abs_divider_4dg:divider|alt_u_div_ske:divider  ; alt_u_div_ske       ; work         ;
+;                |lpm_abs_8b9:my_abs_num|  ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|bcd_converter:CONV_U|lpm_divide:Mod3|lpm_divide_25o:auto_generated|abs_divider_4dg:divider|lpm_abs_8b9:my_abs_num ; lpm_abs_8b9         ; work         ;
+;    |debounce_btn:DEBOUNCE_U|             ; 47 (47)             ; 37 (37)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|debounce_btn:DEBOUNCE_U                                                                                           ; debounce_btn        ; work         ;
+;    |divider:DIVIDE_U|                    ; 113 (113)           ; 67 (67)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|divider:DIVIDE_U                                                                                                  ; divider             ; work         ;
+;    |lpm_divide:Div0|                     ; 82 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|lpm_divide:Div0                                                                                                   ; lpm_divide          ; work         ;
+;       |lpm_divide_itl:auto_generated|    ; 82 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|lpm_divide:Div0|lpm_divide_itl:auto_generated                                                                     ; lpm_divide_itl      ; work         ;
+;          |sign_div_unsign_klh:divider|   ; 82 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|lpm_divide:Div0|lpm_divide_itl:auto_generated|sign_div_unsign_klh:divider                                         ; sign_div_unsign_klh ; work         ;
+;             |alt_u_div_ihe:divider|      ; 82 (82)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|lpm_divide:Div0|lpm_divide_itl:auto_generated|sign_div_unsign_klh:divider|alt_u_div_ihe:divider                   ; alt_u_div_ihe       ; work         ;
+;    |lpm_divide:Div1|                     ; 69 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|lpm_divide:Div1                                                                                                   ; lpm_divide          ; work         ;
+;       |lpm_divide_asl:auto_generated|    ; 69 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|lpm_divide:Div1|lpm_divide_asl:auto_generated                                                                     ; lpm_divide_asl      ; work         ;
+;          |sign_div_unsign_ckh:divider|   ; 69 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|lpm_divide:Div1|lpm_divide_asl:auto_generated|sign_div_unsign_ckh:divider                                         ; sign_div_unsign_ckh ; work         ;
+;             |alt_u_div_2fe:divider|      ; 69 (69)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|lpm_divide:Div1|lpm_divide_asl:auto_generated|sign_div_unsign_ckh:divider|alt_u_div_2fe:divider                   ; alt_u_div_2fe       ; work         ;
+;    |lpm_divide:Mod0|                     ; 83 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|lpm_divide:Mod0                                                                                                   ; lpm_divide          ; work         ;
+;       |lpm_divide_2nl:auto_generated|    ; 83 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|lpm_divide:Mod0|lpm_divide_2nl:auto_generated                                                                     ; lpm_divide_2nl      ; work         ;
+;          |sign_div_unsign_1nh:divider|   ; 83 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|lpm_divide:Mod0|lpm_divide_2nl:auto_generated|sign_div_unsign_1nh:divider                                         ; sign_div_unsign_1nh ; work         ;
+;             |alt_u_div_cke:divider|      ; 83 (83)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|lpm_divide:Mod0|lpm_divide_2nl:auto_generated|sign_div_unsign_1nh:divider|alt_u_div_cke:divider                   ; alt_u_div_cke       ; work         ;
+;    |lpm_divide:Mod1|                     ; 127 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|lpm_divide:Mod1                                                                                                   ; lpm_divide          ; work         ;
+;       |lpm_divide_2nl:auto_generated|    ; 127 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|lpm_divide:Mod1|lpm_divide_2nl:auto_generated                                                                     ; lpm_divide_2nl      ; work         ;
+;          |sign_div_unsign_1nh:divider|   ; 127 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|lpm_divide:Mod1|lpm_divide_2nl:auto_generated|sign_div_unsign_1nh:divider                                         ; sign_div_unsign_1nh ; work         ;
+;             |alt_u_div_cke:divider|      ; 127 (127)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|lpm_divide:Mod1|lpm_divide_2nl:auto_generated|sign_div_unsign_1nh:divider|alt_u_div_cke:divider                   ; alt_u_div_cke       ; work         ;
+;    |lpm_divide:Mod2|                     ; 54 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|lpm_divide:Mod2                                                                                                   ; lpm_divide          ; work         ;
+;       |lpm_divide_ikl:auto_generated|    ; 54 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|lpm_divide:Mod2|lpm_divide_ikl:auto_generated                                                                     ; lpm_divide_ikl      ; work         ;
+;          |sign_div_unsign_hkh:divider|   ; 54 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|lpm_divide:Mod2|lpm_divide_ikl:auto_generated|sign_div_unsign_hkh:divider                                         ; sign_div_unsign_hkh ; work         ;
+;             |alt_u_div_cfe:divider|      ; 54 (54)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|lpm_divide:Mod2|lpm_divide_ikl:auto_generated|sign_div_unsign_hkh:divider|alt_u_div_cfe:divider                   ; alt_u_div_cfe       ; work         ;
+;    |lpm_divide:Mod3|                     ; 99 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|lpm_divide:Mod3                                                                                                   ; lpm_divide          ; work         ;
+;       |lpm_divide_ikl:auto_generated|    ; 99 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|lpm_divide:Mod3|lpm_divide_ikl:auto_generated                                                                     ; lpm_divide_ikl      ; work         ;
+;          |sign_div_unsign_hkh:divider|   ; 99 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|lpm_divide:Mod3|lpm_divide_ikl:auto_generated|sign_div_unsign_hkh:divider                                         ; sign_div_unsign_hkh ; work         ;
+;             |alt_u_div_cfe:divider|      ; 99 (99)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|lpm_divide:Mod3|lpm_divide_ikl:auto_generated|sign_div_unsign_hkh:divider|alt_u_div_cfe:divider                   ; alt_u_div_cfe       ; work         ;
+;    |multiplier:MULTI_U|                  ; 107 (107)           ; 79 (79)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|multiplier:MULTI_U                                                                                                ; multiplier          ; work         ;
+;    |operator_display:SYMBOL_U|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |mini_project|operator_display:SYMBOL_U                                                                                         ; operator_display    ; work         ;
++------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -342,6 +389,24 @@ Encoding Type:  One-Hot
 
 
 Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |mini_project|divider:DIVIDE_U|state                                                                                                            ;
++------------------+---------------+-----------------+---------------+-----------------+---------------+-------------+------------+------------------+------------+
+; Name             ; state.DONE_ST ; state.SIGNAPPLY ; state.RESTORE ; state.WRITE_BIT ; state.ADD_SUB ; state.SHIFT ; state.PREP ; state.CHECK_ZERO ; state.IDLE ;
++------------------+---------------+-----------------+---------------+-----------------+---------------+-------------+------------+------------------+------------+
+; state.IDLE       ; 0             ; 0               ; 0             ; 0               ; 0             ; 0           ; 0          ; 0                ; 0          ;
+; state.CHECK_ZERO ; 0             ; 0               ; 0             ; 0               ; 0             ; 0           ; 0          ; 1                ; 1          ;
+; state.PREP       ; 0             ; 0               ; 0             ; 0               ; 0             ; 0           ; 1          ; 0                ; 1          ;
+; state.SHIFT      ; 0             ; 0               ; 0             ; 0               ; 0             ; 1           ; 0          ; 0                ; 1          ;
+; state.ADD_SUB    ; 0             ; 0               ; 0             ; 0               ; 1             ; 0           ; 0          ; 0                ; 1          ;
+; state.WRITE_BIT  ; 0             ; 0               ; 0             ; 1               ; 0             ; 0           ; 0          ; 0                ; 1          ;
+; state.RESTORE    ; 0             ; 0               ; 1             ; 0               ; 0             ; 0           ; 0          ; 0                ; 1          ;
+; state.SIGNAPPLY  ; 0             ; 1               ; 0             ; 0               ; 0             ; 0           ; 0          ; 0                ; 1          ;
+; state.DONE_ST    ; 1             ; 0               ; 0             ; 0               ; 0             ; 0           ; 0          ; 0                ; 1          ;
++------------------+---------------+-----------------+---------------+-----------------+---------------+-------------+------------+------------------+------------+
+
+
+Encoding Type:  One-Hot
 +--------------------------------------------------------+
 ; State Machine - |mini_project|multiplier:MULTI_U|state ;
 +--------------+--------------+------------+-------------+
@@ -358,74 +423,72 @@ Encoding Type:  One-Hot
 +-----------------------------------------------------+---------------------+------------------------+
 ; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
 +-----------------------------------------------------+---------------------+------------------------+
-; bcd_converter:CONV_U|INT[31]                        ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|TEN_GRAND[0]                   ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|TEN_GRAND[1]                   ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|TEN_GRAND[2]                   ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|TEN_GRAND[3]                   ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|GRAND[0]                       ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|GRAND[1]                       ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|GRAND[2]                       ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|GRAND[3]                       ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|HUNDREDS[0]                    ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|HUNDREDS[1]                    ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|HUNDREDS[2]                    ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|HUNDREDS[3]                    ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|TENS[0]                        ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|TENS[1]                        ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|TENS[2]                        ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|TENS[3]                        ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|ONES[0]                        ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|ONES[1]                        ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|ONES[2]                        ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|ONES[3]                        ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|INT[30]                        ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|INT[29]                        ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|INT[28]                        ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|INT[27]                        ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|INT[26]                        ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|INT[25]                        ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|INT[24]                        ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|INT[23]                        ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|INT[22]                        ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|INT[21]                        ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|INT[20]                        ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|INT[19]                        ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|INT[18]                        ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|INT[17]                        ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|INT[16]                        ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|INT[15]                        ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|INT[14]                        ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|INT[13]                        ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|INT[12]                        ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|INT[11]                        ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|INT[10]                        ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|INT[9]                         ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|INT[8]                         ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|INT[7]                         ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|INT[6]                         ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|INT[5]                         ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|INT[4]                         ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|INT[3]                         ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|INT[2]                         ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|INT[1]                         ; OVERFLOW            ; yes                    ;
-; bcd_converter:CONV_U|INT[0]                         ; OVERFLOW            ; yes                    ;
+; bcd_converter:CONV_U|INT[31]                        ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|TEN_GRAND[0]                   ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|TEN_GRAND[1]                   ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|TEN_GRAND[2]                   ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|TEN_GRAND[3]                   ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|GRAND[0]                       ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|GRAND[1]                       ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|GRAND[2]                       ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|GRAND[3]                       ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|HUNDREDS[0]                    ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|HUNDREDS[1]                    ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|HUNDREDS[2]                    ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|HUNDREDS[3]                    ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|TENS[0]                        ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|TENS[1]                        ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|TENS[2]                        ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|TENS[3]                        ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|ONES[0]                        ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|ONES[1]                        ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|ONES[2]                        ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|ONES[3]                        ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|INT[30]                        ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|INT[29]                        ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|INT[28]                        ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|INT[27]                        ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|INT[26]                        ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|INT[25]                        ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|INT[24]                        ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|INT[23]                        ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|INT[22]                        ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|INT[21]                        ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|INT[20]                        ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|INT[19]                        ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|INT[18]                        ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|INT[17]                        ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|INT[16]                        ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|INT[15]                        ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|INT[14]                        ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|INT[13]                        ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|INT[12]                        ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|INT[11]                        ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|INT[10]                        ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|INT[9]                         ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|INT[8]                         ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|INT[7]                         ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|INT[6]                         ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|INT[5]                         ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|INT[4]                         ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|INT[3]                         ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|INT[2]                         ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|INT[1]                         ; ERROR_REG           ; yes                    ;
+; bcd_converter:CONV_U|INT[0]                         ; ERROR_REG           ; yes                    ;
 ; Number of user-specified and inferred latches = 52  ;                     ;                        ;
 +-----------------------------------------------------+---------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+-------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                    ;
-+----------------------------------------------+--------------------------------------------------------+
-; Register name                                ; Reason for Removal                                     ;
-+----------------------------------------------+--------------------------------------------------------+
-; bcd_7_segment:NUM_DISP_U|SEVEN_SEG_SIGN[5]   ; Merged with bcd_7_segment:NUM_DISP_U|SEVEN_SEG_SIGN[0] ;
-; bcd_7_segment:NUM_DISP_U|SEVEN_SEG_SIGN[1,2] ; Stuck at VCC due to stuck port data_in                 ;
-; bcd_7_segment:NUM_DISP_U|SEVEN_SEG_SIGN[4]   ; Merged with bcd_7_segment:NUM_DISP_U|SEVEN_SEG_SIGN[0] ;
-; bcd_7_segment:NUM_DISP_U|SEVEN_SEG_SIGN[3]   ; Stuck at VCC due to stuck port data_in                 ;
-; Total Number of Removed Registers = 5        ;                                                        ;
-+----------------------------------------------+--------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                     ;
++-----------------------------------------------+--------------------------------------------------------+
+; Register name                                 ; Reason for Removal                                     ;
++-----------------------------------------------+--------------------------------------------------------+
+; bcd_7_segment:NUM_DISP_U|SEVEN_SEG_SIGN[1..3] ; Stuck at VCC due to stuck port data_in                 ;
+; bcd_7_segment:NUM_DISP_U|SEVEN_SEG_SIGN[5]    ; Merged with bcd_7_segment:NUM_DISP_U|SEVEN_SEG_SIGN[4] ;
+; Total Number of Removed Registers = 4         ;                                                        ;
++-----------------------------------------------+--------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -433,12 +496,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 204   ;
-; Number of registers using Synchronous Clear  ; 32    ;
-; Number of registers using Synchronous Load   ; 29    ;
-; Number of registers using Asynchronous Clear ; 167   ;
+; Total registers                              ; 274   ;
+; Number of registers using Synchronous Clear  ; 52    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 236   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 89    ;
+; Number of registers using Clock Enable       ; 141   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -456,19 +519,27 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------+---------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |mini_project|debounce_btn:DEBOUNCE_U|cnt[15]  ;
-; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |mini_project|DATA_R[7]                        ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |mini_project|multiplier:MULTI_U|MULTIPLIER[9] ;
-; 4:1                ; 18 bits   ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |mini_project|multiplier:MULTI_U|MULTIPLIER[4] ;
-; 3:1                ; 19 bits   ; 38 LEs        ; 38 LEs               ; 0 LEs                  ; No         ; |mini_project|bcd_converter:CONV_U|INT         ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; No         ; |mini_project|SEVEN_SEG_GRAND                  ;
-; 5:1                ; 10 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |mini_project|SEVEN_SEG_SIGN                   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |mini_project|debounce_btn:DEBOUNCE_U|cnt[23]    ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |mini_project|divider:DIVIDE_U|Q[7]              ;
+; 4:1                ; 20 bits   ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; Yes        ; |mini_project|DATA_R[12]                         ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |mini_project|multiplier:MULTI_U|MULTIPLIER[9]   ;
+; 4:1                ; 19 bits   ; 38 LEs        ; 19 LEs               ; 19 LEs                 ; Yes        ; |mini_project|multiplier:MULTI_U|MULTIPLICAND[5] ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |mini_project|divider:DIVIDE_U|cnt[3]            ;
+; 5:1                ; 10 bits   ; 30 LEs        ; 20 LEs               ; 10 LEs                 ; Yes        ; |mini_project|divider:DIVIDE_U|QUOTIENT[0]       ;
+; 5:1                ; 10 bits   ; 30 LEs        ; 20 LEs               ; 10 LEs                 ; Yes        ; |mini_project|divider:DIVIDE_U|REMAINDER[9]      ;
+; 6:1                ; 10 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |mini_project|divider:DIVIDE_U|A[5]              ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |mini_project|BCD_HUNDREDS_MUX[0]                ;
+; 3:1                ; 18 bits   ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; No         ; |mini_project|BCD_TENS_MUX[0]                    ;
+; 3:1                ; 20 bits   ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; No         ; |mini_project|NEXT_DATA_R[2]                     ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; No         ; |mini_project|SEVEN_SEG_TENS                     ;
+; 5:1                ; 10 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |mini_project|SEVEN_SEG_TEN_GRAND                ;
+; 4:1                ; 19 bits   ; 38 LEs        ; 38 LEs               ; 0 LEs                  ; No         ; |mini_project|bcd_converter:CONV_U|INT           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
 
 
 +------------------------------------------------------------------------------+
@@ -518,6 +589,154 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+----------------------------------------+
 ; n              ; 10    ; Signed Integer                         ;
 +----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: divider:DIVIDE_U ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; n              ; 10    ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 10             ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_itl ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 10             ; Untyped                ;
+; LPM_WIDTHD             ; 10             ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_2nl ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 10             ; Untyped                ;
+; LPM_WIDTHD             ; 10             ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_2nl ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div1 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 9              ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_asl ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod2 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 9              ; Untyped                ;
+; LPM_WIDTHD             ; 9              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_ikl ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod3 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 9              ; Untyped                ;
+; LPM_WIDTHD             ; 9              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_ikl ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -720,26 +939,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 56                          ;
-; cycloneiii_ff         ; 204                         ;
-;     CLR               ; 46                          ;
+; cycloneiii_ff         ; 274                         ;
+;     CLR               ; 63                          ;
 ;     CLR SCLR          ; 32                          ;
-;     ENA CLR           ; 60                          ;
-;     ENA CLR SLD       ; 29                          ;
-;     plain             ; 37                          ;
-; cycloneiii_lcell_comb ; 9435                        ;
-;     arith             ; 2985                        ;
+;     ENA CLR           ; 121                         ;
+;     ENA CLR SCLR      ; 20                          ;
+;     plain             ; 38                          ;
+; cycloneiii_lcell_comb ; 10125                       ;
+;     arith             ; 3207                        ;
+;         1 data inputs ; 21                          ;
+;         2 data inputs ; 216                         ;
+;         3 data inputs ; 2970                        ;
+;     normal            ; 6918                        ;
+;         0 data inputs ; 245                         ;
 ;         1 data inputs ; 15                          ;
-;         2 data inputs ; 192                         ;
-;         3 data inputs ; 2778                        ;
-;     normal            ; 6450                        ;
-;         0 data inputs ; 212                         ;
-;         1 data inputs ; 7                           ;
-;         2 data inputs ; 3056                        ;
-;         3 data inputs ; 265                         ;
-;         4 data inputs ; 2910                        ;
+;         2 data inputs ; 3275                        ;
+;         3 data inputs ; 311                         ;
+;         4 data inputs ; 3072                        ;
 ;                       ;                             ;
 ; Max LUT depth         ; 209.50                      ;
-; Average LUT depth     ; 160.67                      ;
+; Average LUT depth     ; 150.66                      ;
 +-----------------------+-----------------------------+
 
 
@@ -748,7 +967,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:11     ;
+; Top            ; 00:00:12     ;
 +----------------+--------------+
 
 
@@ -758,7 +977,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Mon Oct 13 13:39:30 2025
+    Info: Processing started: Thu Oct 16 22:23:37 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off mini_project -c mini_project
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -766,7 +985,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file operato
     Info (12022): Found design unit 1: operator_display-behavioral File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/operator_display.vhd Line: 15
     Info (12023): Found entity 1: operator_display File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/operator_display.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file mini_project.vhd
-    Info (12022): Found design unit 1: mini_project-structural File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 21
+    Info (12022): Found design unit 1: mini_project-structural File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 22
     Info (12023): Found entity 1: mini_project File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file bcd_converter.vhd
     Info (12022): Found design unit 1: bcd_converter-converter File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 18
@@ -784,10 +1003,13 @@ Info (12021): Found 2 design units, including 1 entities, in source file full_ad
     Info (12022): Found design unit 1: full_adder-data_flow File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/full_adder.vhd Line: 11
     Info (12023): Found entity 1: full_adder File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/full_adder.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file multiplier.vhd
-    Info (12022): Found design unit 1: multiplier-behavioral File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/multiplier.vhd Line: 16
+    Info (12022): Found design unit 1: multiplier-behavioral File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/multiplier.vhd Line: 17
     Info (12023): Found entity 1: multiplier File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/multiplier.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file divider.vhd
+    Info (12022): Found design unit 1: divider-behavioral File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/divider.vhd Line: 19
+    Info (12023): Found entity 1: divider File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/divider.vhd Line: 5
 Info (12127): Elaborating entity "mini_project" for the top level hierarchy
-Info (12128): Elaborating entity "bcd_converter" for hierarchy "bcd_converter:CONV_U" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 121
+Info (12128): Elaborating entity "bcd_converter" for hierarchy "bcd_converter:CONV_U" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 139
 Warning (10492): VHDL Process Statement warning at bcd_converter.vhd(33): signal "INT" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 33
 Warning (10492): VHDL Process Statement warning at bcd_converter.vhd(35): signal "INT" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 35
 Warning (10492): VHDL Process Statement warning at bcd_converter.vhd(41): signal "INT" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 41
@@ -858,13 +1080,21 @@ Info (10041): Inferred latch for "INT[28]" at bcd_converter.vhd(22) File: C:/Use
 Info (10041): Inferred latch for "INT[29]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
 Info (10041): Inferred latch for "INT[30]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
 Info (10041): Inferred latch for "INT[31]" at bcd_converter.vhd(22) File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
-Info (12128): Elaborating entity "bcd_7_segment" for hierarchy "bcd_7_segment:NUM_DISP_U" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 133
-Info (12128): Elaborating entity "debounce_btn" for hierarchy "debounce_btn:DEBOUNCE_U" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 149
-Info (12128): Elaborating entity "operator_display" for hierarchy "operator_display:SYMBOL_U" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 156
-Info (12128): Elaborating entity "adder_subtractor" for hierarchy "adder_subtractor:ADD_SUB_U" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 166
+Info (12128): Elaborating entity "bcd_7_segment" for hierarchy "bcd_7_segment:NUM_DISP_U" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 151
+Info (12128): Elaborating entity "debounce_btn" for hierarchy "debounce_btn:DEBOUNCE_U" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 168
+Info (12128): Elaborating entity "operator_display" for hierarchy "operator_display:SYMBOL_U" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 175
+Info (12128): Elaborating entity "adder_subtractor" for hierarchy "adder_subtractor:ADD_SUB_U" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 185
 Info (12128): Elaborating entity "full_adder" for hierarchy "adder_subtractor:ADD_SUB_U|full_adder:\adder:0:adder" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/adder_subtractor.vhd Line: 23
-Info (12128): Elaborating entity "multiplier" for hierarchy "multiplier:MULTI_U" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 173
-Info (278001): Inferred 8 megafunctions from design logic
+Info (12128): Elaborating entity "multiplier" for hierarchy "multiplier:MULTI_U" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 192
+Info (12128): Elaborating entity "divider" for hierarchy "divider:DIVIDE_U" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 201
+Warning (10036): Verilog HDL or VHDL warning at divider.vhd(29): object "sign_M" assigned a value but never read File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/divider.vhd Line: 29
+Info (278001): Inferred 14 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 226
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 226
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod1" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 227
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div1" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 229
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod2" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 229
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod3" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 230
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "bcd_converter:CONV_U|Div0" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 41
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "bcd_converter:CONV_U|Div1" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 42
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "bcd_converter:CONV_U|Mod0" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 42
@@ -873,6 +1103,58 @@ Info (278001): Inferred 8 megafunctions from design logic
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "bcd_converter:CONV_U|Div3" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 44
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "bcd_converter:CONV_U|Mod2" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 44
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "bcd_converter:CONV_U|Mod3" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 45
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div0" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 226
+Info (12133): Instantiated megafunction "lpm_divide:Div0" with the following parameter: File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 226
+    Info (12134): Parameter "LPM_WIDTHN" = "10"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_itl.tdf
+    Info (12023): Found entity 1: lpm_divide_itl File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_divide_itl.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_klh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_klh File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/sign_div_unsign_klh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_ihe.tdf
+    Info (12023): Found entity 1: alt_u_div_ihe File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/alt_u_div_ihe.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_t3c.tdf
+    Info (12023): Found entity 1: add_sub_t3c File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/add_sub_t3c.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_u3c.tdf
+    Info (12023): Found entity 1: add_sub_u3c File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/add_sub_u3c.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod0" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 226
+Info (12133): Instantiated megafunction "lpm_divide:Mod0" with the following parameter: File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 226
+    Info (12134): Parameter "LPM_WIDTHN" = "10"
+    Info (12134): Parameter "LPM_WIDTHD" = "10"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_2nl.tdf
+    Info (12023): Found entity 1: lpm_divide_2nl File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_divide_2nl.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_1nh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_1nh File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/sign_div_unsign_1nh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_cke.tdf
+    Info (12023): Found entity 1: alt_u_div_cke File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/alt_u_div_cke.tdf Line: 27
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div1" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 229
+Info (12133): Instantiated megafunction "lpm_divide:Div1" with the following parameter: File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 229
+    Info (12134): Parameter "LPM_WIDTHN" = "9"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_asl.tdf
+    Info (12023): Found entity 1: lpm_divide_asl File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_divide_asl.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_ckh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_ckh File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/sign_div_unsign_ckh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_2fe.tdf
+    Info (12023): Found entity 1: alt_u_div_2fe File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/alt_u_div_2fe.tdf Line: 27
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod2" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 229
+Info (12133): Instantiated megafunction "lpm_divide:Mod2" with the following parameter: File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 229
+    Info (12134): Parameter "LPM_WIDTHN" = "9"
+    Info (12134): Parameter "LPM_WIDTHD" = "9"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_ikl.tdf
+    Info (12023): Found entity 1: lpm_divide_ikl File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_divide_ikl.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_hkh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_hkh File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/sign_div_unsign_hkh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_cfe.tdf
+    Info (12023): Found entity 1: alt_u_div_cfe File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/alt_u_div_cfe.tdf Line: 27
 Info (12130): Elaborated megafunction instantiation "bcd_converter:CONV_U|lpm_divide:Div0" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 41
 Info (12133): Instantiated megafunction "bcd_converter:CONV_U|lpm_divide:Div0" with the following parameter: File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 41
     Info (12134): Parameter "LPM_WIDTHN" = "32"
@@ -886,10 +1168,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/abs_
     Info (12023): Found entity 1: abs_divider_5dg File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/abs_divider_5dg.tdf Line: 29
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_uke.tdf
     Info (12023): Found entity 1: alt_u_div_uke File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/alt_u_div_uke.tdf Line: 27
-Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_t3c.tdf
-    Info (12023): Found entity 1: add_sub_t3c File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/add_sub_t3c.tdf Line: 23
-Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_u3c.tdf
-    Info (12023): Found entity 1: add_sub_u3c File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/add_sub_u3c.tdf Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_9b9.tdf
     Info (12023): Found entity 1: lpm_abs_9b9 File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_abs_9b9.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_8b9.tdf
@@ -954,69 +1232,29 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_
     Info (12023): Found entity 1: lpm_abs_o99 File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/lpm_abs_o99.tdf Line: 25
 Info (13014): Ignored 239 buffer(s)
     Info (13016): Ignored 239 CARRY_SUM buffer(s)
-Warning (13012): Latch bcd_converter:CONV_U|INT[31] has unsafe behavior File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DATA_R[19] File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 214
-Warning (13012): Latch bcd_converter:CONV_U|INT[30] has unsafe behavior File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DATA_R[19] File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 214
-Warning (13012): Latch bcd_converter:CONV_U|INT[29] has unsafe behavior File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DATA_R[19] File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 214
-Warning (13012): Latch bcd_converter:CONV_U|INT[28] has unsafe behavior File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DATA_R[19] File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 214
-Warning (13012): Latch bcd_converter:CONV_U|INT[27] has unsafe behavior File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DATA_R[19] File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 214
-Warning (13012): Latch bcd_converter:CONV_U|INT[26] has unsafe behavior File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DATA_R[19] File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 214
-Warning (13012): Latch bcd_converter:CONV_U|INT[25] has unsafe behavior File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DATA_R[19] File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 214
-Warning (13012): Latch bcd_converter:CONV_U|INT[24] has unsafe behavior File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DATA_R[19] File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 214
-Warning (13012): Latch bcd_converter:CONV_U|INT[23] has unsafe behavior File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DATA_R[19] File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 214
-Warning (13012): Latch bcd_converter:CONV_U|INT[22] has unsafe behavior File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DATA_R[19] File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 214
-Warning (13012): Latch bcd_converter:CONV_U|INT[21] has unsafe behavior File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DATA_R[19] File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 214
-Warning (13012): Latch bcd_converter:CONV_U|INT[20] has unsafe behavior File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DATA_R[19] File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 214
-Warning (13012): Latch bcd_converter:CONV_U|INT[19] has unsafe behavior File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DATA_R[19] File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 214
-Warning (13012): Latch bcd_converter:CONV_U|INT[18] has unsafe behavior File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DATA_R[18] File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 214
-Warning (13012): Latch bcd_converter:CONV_U|INT[17] has unsafe behavior File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DATA_R[17] File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 214
-Warning (13012): Latch bcd_converter:CONV_U|INT[16] has unsafe behavior File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DATA_R[16] File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 214
-Warning (13012): Latch bcd_converter:CONV_U|INT[15] has unsafe behavior File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DATA_R[15] File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 214
-Warning (13012): Latch bcd_converter:CONV_U|INT[14] has unsafe behavior File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DATA_R[14] File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 214
-Warning (13012): Latch bcd_converter:CONV_U|INT[13] has unsafe behavior File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DATA_R[13] File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 214
-Warning (13012): Latch bcd_converter:CONV_U|INT[12] has unsafe behavior File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DATA_R[12] File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 214
-Warning (13012): Latch bcd_converter:CONV_U|INT[11] has unsafe behavior File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DATA_R[11] File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 214
-Warning (13012): Latch bcd_converter:CONV_U|INT[10] has unsafe behavior File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DATA_R[10] File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 214
-Warning (13012): Latch bcd_converter:CONV_U|INT[9] has unsafe behavior File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DATA_R[9] File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 214
-Warning (13012): Latch bcd_converter:CONV_U|INT[8] has unsafe behavior File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/bcd_converter.vhd Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DATA_R[8] File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 214
 Info (13000): Registers with preset signals will power-up high File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/debounce_btn.vhd Line: 19
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "SEVEN_SEG_SIGN[3]" is stuck at VCC File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 12
+    Warning (13410): Pin "SEVEN_SEG_SIGN[3]" is stuck at VCC File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/mini_project.vhd Line: 13
 Info (286030): Timing-Driven Synthesis is running
+Info (17016): Found the following redundant logic cells in design
+    Info (17048): Logic cell "lpm_divide:Mod0|lpm_divide_2nl:auto_generated|sign_div_unsign_1nh:divider|alt_u_div_cke:divider|add_sub_9_result_int[0]~0" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/alt_u_div_cke.tdf Line: 72
+    Info (17048): Logic cell "lpm_divide:Mod0|lpm_divide_2nl:auto_generated|sign_div_unsign_1nh:divider|alt_u_div_cke:divider|add_sub_6_result_int[0]~14" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/alt_u_div_cke.tdf Line: 57
+    Info (17048): Logic cell "lpm_divide:Mod0|lpm_divide_2nl:auto_generated|sign_div_unsign_1nh:divider|alt_u_div_cke:divider|add_sub_7_result_int[0]~16" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/alt_u_div_cke.tdf Line: 62
+    Info (17048): Logic cell "lpm_divide:Mod0|lpm_divide_2nl:auto_generated|sign_div_unsign_1nh:divider|alt_u_div_cke:divider|add_sub_8_result_int[0]~18" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/alt_u_div_cke.tdf Line: 67
+    Info (17048): Logic cell "lpm_divide:Mod2|lpm_divide_ikl:auto_generated|sign_div_unsign_hkh:divider|alt_u_div_cfe:divider|add_sub_8_result_int[0]~0" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/alt_u_div_cfe.tdf Line: 67
+    Info (17048): Logic cell "lpm_divide:Mod2|lpm_divide_ikl:auto_generated|sign_div_unsign_hkh:divider|alt_u_div_cfe:divider|add_sub_6_result_int[0]~14" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/alt_u_div_cfe.tdf Line: 57
+    Info (17048): Logic cell "lpm_divide:Mod2|lpm_divide_ikl:auto_generated|sign_div_unsign_hkh:divider|alt_u_div_cfe:divider|add_sub_7_result_int[0]~16" File: C:/Users/NEMO/Desktop/digiLab/quartus/mini_project/db/alt_u_div_cfe.tdf Line: 62
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 9520 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 10246 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 13 input pins
     Info (21059): Implemented 43 output pins
-    Info (21061): Implemented 9464 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 69 warnings
-    Info: Peak virtual memory: 4928 megabytes
-    Info: Processing ended: Mon Oct 13 13:40:03 2025
-    Info: Elapsed time: 00:00:33
-    Info: Total CPU time (on all processors): 00:00:33
+    Info (21061): Implemented 10190 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 22 warnings
+    Info: Peak virtual memory: 4937 megabytes
+    Info: Processing ended: Thu Oct 16 22:24:00 2025
+    Info: Elapsed time: 00:00:23
+    Info: Total CPU time (on all processors): 00:00:34
 
 

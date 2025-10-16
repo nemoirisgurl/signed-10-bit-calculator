@@ -23,7 +23,7 @@ architecture rtl of bcd_7_segment is
     function bcd_to_7seg(bcd : std_logic_vector(3 downto 0)) return std_logic_vector is
         variable seg : std_logic_vector(6 downto 0);
     begin
-        case bcd is
+        case bcd is --gfedcba active low
             when "0000" => seg := "1000000"; -- 0
             when "0001" => seg := "1111001"; -- 1
             when "0010" => seg := "0100100"; -- 2
@@ -35,9 +35,10 @@ architecture rtl of bcd_7_segment is
             when "1000" => seg := "0000000"; -- 8
             when "1001" => seg := "0010000"; -- 9
             when "1010" => seg := "0111111"; -- '-' (เฉพาะ segment g)
+				when "1011" => seg := "1001111"; -- '|'
             when "1100" => seg := "0001110"; -- 'F'
             when "1111" => seg := "1111111"; -- blank
-            when others => seg := "0000110"; -- 'E'
+				when others => seg := "1111111"; -- blank
         end case;
         return seg;
     end function;

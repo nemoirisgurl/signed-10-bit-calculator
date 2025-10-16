@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "10/10/2025 22:36:48"
+-- Generated on "10/15/2025 16:13:31"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          mini_project
 -- 
@@ -37,6 +37,7 @@ ARCHITECTURE mini_project_arch OF mini_project_vhd_vec_tst IS
 SIGNAL CLK : STD_LOGIC;
 SIGNAL DONE : STD_LOGIC;
 SIGNAL INPUT : STD_LOGIC_VECTOR(9 DOWNTO 0);
+SIGNAL RESULT : STD_LOGIC_VECTOR(19 DOWNTO 0);
 SIGNAL RST_N : STD_LOGIC;
 SIGNAL SEVEN_SEG_GRAND : STD_LOGIC_VECTOR(6 DOWNTO 0);
 SIGNAL SEVEN_SEG_HUNDREDS : STD_LOGIC_VECTOR(6 DOWNTO 0);
@@ -50,6 +51,7 @@ COMPONENT mini_project
 	CLK : IN STD_LOGIC;
 	DONE : OUT STD_LOGIC;
 	INPUT : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+	RESULT : OUT STD_LOGIC_VECTOR(19 DOWNTO 0);
 	RST_N : IN STD_LOGIC;
 	SEVEN_SEG_GRAND : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
 	SEVEN_SEG_HUNDREDS : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
@@ -67,6 +69,7 @@ BEGIN
 	CLK => CLK,
 	DONE => DONE,
 	INPUT => INPUT,
+	RESULT => RESULT,
 	RST_N => RST_N,
 	SEVEN_SEG_GRAND => SEVEN_SEG_GRAND,
 	SEVEN_SEG_HUNDREDS => SEVEN_SEG_HUNDREDS,
@@ -82,9 +85,9 @@ t_prcs_CLK: PROCESS
 BEGIN
 LOOP
 	CLK <= '0';
-	WAIT FOR 10000 ps;
+	WAIT FOR 1000 ps;
 	CLK <= '1';
-	WAIT FOR 10000 ps;
+	WAIT FOR 1000 ps;
 	IF (NOW >= 1000000 ps) THEN WAIT; END IF;
 END LOOP;
 END PROCESS t_prcs_CLK;
